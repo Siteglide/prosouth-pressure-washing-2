@@ -1,4 +1,9 @@
-<link rel="stylesheet" href="{{ 'css/webapps/custom_webapp_1/list/default.css' | asset_url }}">
 {% for item in webappData.data.content -%}
-	<p>{{item.properties.name}}</p>
+	<li class="col-md-3 col-sm-4 col-xs-6">
+    <div class="certlogo">
+    {% if {{this.custom_field_2}} != "" -%}<a href="{{item.properties.custom_field_2}}" target="_blank">{% endif -%}
+        <img src="{{item.properties.custom_field_1}}" alt="{{item.properties.name}}">
+    {% if {{this.custom_field_2}} != "" -%}</a>{% endif -%}
+    </div>    
+</li>
 {% endfor -%}
