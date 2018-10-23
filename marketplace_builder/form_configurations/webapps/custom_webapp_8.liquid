@@ -1,0 +1,44 @@
+---
+name: custom_webapp_8
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    _webapp_name:
+      name: "_webapp_name"
+      type: string
+      value: 'Residential Services'
+    _webapp_slug:
+      name: "_webapp_slug"
+      type: string
+      value: 'residential-services'
+    name:
+      name: name
+      type: string
+    slug:
+      name: slug
+      type: string
+    weighting:
+      name: weighting
+      type: integer
+    release_date:
+      name: release_date
+      type: integer
+    expiry_date:
+      name: expiry_date
+      type: integer
+    enabled:
+      name: enabled
+      type: boolean
+    custom_field_1:
+      name: 'Image'
+      type: image
+      required: false
+      validation: {}
+    custom_field_2:
+      name: 'Short Description'
+      type: input_text
+      required: false
+      validation: {}
+---
+{%- include 'form', id:'custom_webapp_8' -%}
