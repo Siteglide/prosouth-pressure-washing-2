@@ -1,0 +1,7 @@
+{% query_graph 'site_settings', result_name: 'site_settings_raw' -%}
+{% assign site_settings = site_settings_raw.data.results[0] -%}
+
+{% query_graph 'company_information', result_name: 'company_information_raw' -%}
+{% assign company_information = company_information_raw.data.results[0] -%}
+
+{% query_graph 'current_user', result_name: session -%}

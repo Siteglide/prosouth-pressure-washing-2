@@ -1,0 +1,73 @@
+query blog_posts(
+	$author: String
+	$category: String
+	$id: ID
+	$slug: String
+	$perPage: Int
+	$page: Int
+)
+{
+	data: customizations(
+		is_deleted: false,
+		id: $id
+		name:"blog_posts"
+		per_page: $perPage
+		page: $page
+		sort:[
+			{
+				name: "created_at",
+				order: "desc"
+			}
+		],
+		properties:[
+			{
+				name: "category",
+				value: $category
+				values_operator: OR
+			},
+			{
+				name: "author",
+				value: $author
+				values_operator: OR
+			},
+			{
+				name: "slug",
+				value: $slug
+			}
+		]
+	),
+	{
+		total_entries
+		size
+		content: results{
+			id
+			created_at
+			name: property(name: "name")
+			slug: property(name: "slug")
+			title: property(name: "title")
+			subtitle: property(name: "subtitle")
+			description: property(name: "description")
+			blog_image: property(name: "blog_image")
+			blog_image_alt: property(name: "blog_image_alt")
+			custom_1: property(name: "custom_1")
+			custom_2: property(name: "custom_2")
+			custom_3: property(name: "custom_3")
+			banner_template: property(name: "banner_template")
+			banner_title: property(name: "banner_title")
+			banner_subtitle: property(name: "banner_subtitle")
+			banner_background: property(name: "banner_background")
+			banner_image: property(name: "banner_image")
+			banner_primary_button_text: property(name: "banner_primary_button_text")
+			banner_primary_button_url: property(name: "banner_primary_button_url")
+			banner_secondary_button_text: property(name: "banner_secondary_button_text")
+			banner_secondary_button_url: property(name: "banner_secondary_button_url")
+			list_image: property(name: "list_image")
+			list_image_alt: property(name: "list_image_alt")
+			main_image: property(name: "main_image")
+			main_image_alt: property(name: "main_image_alt")
+			author: property(name: "author")
+			category: property(name: "category")
+			blog_content: property(name: "blog_content")
+		}
+	}
+}

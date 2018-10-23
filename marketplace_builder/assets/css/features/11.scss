@@ -1,0 +1,29 @@
+@import '../../bootstrap/breakpointInclude';
+.features11 {
+	.features-pr-10 {
+		@include media-breakpoint-up(md) {
+			padding-right: 10px !important;
+		}
+	}
+	img {
+		margin-right: auto;
+		max-width: 100%;
+		display: block;
+		margin-left: auto;
+		object-fit: cover;
+		@include media-breakpoint-up(md) {
+			margin-left: 0 !important;
+			
+		}
+	}
+	div {
+		h4 {
+			margin-top: 10px; 
+
+			font-size: 20px;
+			@include media-breakpoint-up(md) {
+				margin-top: 0 !important;
+			}
+		}
+	}
+} 

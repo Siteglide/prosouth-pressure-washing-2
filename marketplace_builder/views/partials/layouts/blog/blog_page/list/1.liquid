@@ -1,0 +1,33 @@
+<article class="row mainBlogList">
+	<div class="col-12 columnPadding">
+		<div class="Content blogListHome">
+			<a class="linkToBlogDetail" href="/blog-item/{{item.slug}}">
+			<div class="imageContainer" style="background-image: url('{% if item.list_image contains 'http' -%}{{item.list_image}}{% else -%}{{item.list_image | asset_url}}{% endif -%}');"></div> 
+				<div class="ContentContainer"> 
+					<h3>{{item.name}}</h3>
+					<p>{{item.description}}</p> 
+				</div>
+			</a>
+			<div class="FooterContainer row">
+				<div class="col-12 col-lg-7 columnPadding">
+					<p><i class="fal fa-calendar"></i>{{item.created_at | date: "%d %B %Y"}}</p>
+					{% if item.category != null -%}
+						<h6> | </h6> 
+						<a class="categoryHover" href="/blog-category/{{category.data.content[0].slug}}"><p><i class="fal fa-tag"></i>
+					{{category.data.content[0].name}}</p></a>
+					{% endif -%}
+				</div>
+				<div class="col-12 col-lg-5 author columnPadding">
+					{% if item.author != null -%}
+						<a class="authorHover" href="/author/{{author.data.content[0].slug}}">
+							<p><i class="fal fa-user"></i>{{author.data.content[0].name}}</p>
+							{% if author.data.content[0].author_image -%}
+								<img src="{% if author.data.content[0].author_image contains 'http' -%}{{author.data.content[0].author_image}}{% else -%}{{author.data.content[0].author_image | asset_url}}{% endif -%}" alt="{{author.data.content[0].image_alt}}">
+							{% endif -%}
+						</a>
+					{% endif -%} 
+				</div>
+			</div>
+		</div>
+	</div>
+</article>

@@ -1,0 +1,11 @@
+query menu_groups{
+  data: customizations(
+    name: "menu_groups"
+  ){
+    total_entries
+    content: results{
+      id
+      properties: property(name:"name")
+    }
+  }
+}

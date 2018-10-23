@@ -1,0 +1,25 @@
+query company_information{
+	data: customizations (
+			name: "company_information"
+		), {
+		results {
+			name: property(name: "name")
+			logo: property(name: "logo")
+			logo_white: property(name: "logo_white")
+			address_line_1: property(name: "address_line_1")
+			address_line_2: property(name: "address_line_2")
+			phone_number: property(name: "phone_number")
+			email_address: property(name: "email_address")
+			twitter_account: property(name: "twitter_account")
+			facebook_account: property(name: "facebook_account")
+			linkedin_account: property(name: "linkedin_account")
+			google_plus_account: property(name: "google_plus_account")
+			instagram_account: property(name: "instagram_account")
+			vat_number: property(name: "vat_number")
+			google_analytics_id: property(name: "google_analytics_id")
+			google_analytics_view_id: property(name: "google_analytics_view_id")
+			google_analytics_site_verification: property(name: "google_analytics_site_verification")
+			active_campaign_id: property(name: "active_campaign_id")
+		}
+	}
+}

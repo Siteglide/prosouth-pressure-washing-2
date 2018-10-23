@@ -1,0 +1,35 @@
+query authorList{
+	data: customizations(
+		name: "author"
+		sort:[
+			{
+				name: "properties.title",
+				order: "desc"
+			}
+		]
+	),{
+		total_entries
+		content: results{
+			id
+			name: property(name: "name")
+			slug: property(name: "slug")
+			title: property(name: "title")
+			subtitle: property(name: "subtitle")
+			description: property(name: "description")
+			author_image: property(name: "author_image") 
+			banner_background: property(name: "banner_background")
+			image_alt: property(name: "image_alt")
+			role: property(name: "role")
+			custom_1: property(name: "custom_1")
+			custom_2: property(name: "custom_2")
+			custom_3: property(name: "custom_3")
+			team_id: property(name: "team_id")
+			linkedin_url: property(name: "linkedin_url")	  
+			facebook_url: property(name: "facebook_url")
+			twitter_url: property(name: "twitter_url")
+			instagram_url: property(name: "instagram_url")
+			google_url: property(name: "google_url")
+			pintrest_url: property(name: "pintrest_url")
+		}
+	}
+}

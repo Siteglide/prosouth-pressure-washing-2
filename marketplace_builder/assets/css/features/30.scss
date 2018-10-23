@@ -1,0 +1,29 @@
+@import '../../bootstrap/breakpointInclude';
+.features30 {
+
+	.fullHeightCol {
+		
+		
+		
+		height: auto;
+		text-align: center;
+		display: flex;
+		
+		flex-direction: column;
+		
+		
+	}
+	.iconClass {
+		margin-bottom: 10px;
+		min-height: 32px;
+		max-height: 32px;
+	}
+	.buttonContainer {
+		margin-top: auto;
+		display: block;
+		margin-bottom: 0;
+	}
+	.contentContainer {
+		padding-bottom: 10px;
+	} 
+}    

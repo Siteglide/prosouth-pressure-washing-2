@@ -1,0 +1,21 @@
+---
+slug: blog-item
+layout_name: templates/1
+---
+{% query_graph 'blog_settings', result_name: 'blog_settings' -%}
+
+{% capture url_template %}/blog-item/{blog_post}{% endcapture -%}
+{% assign url_params = current_full_path | extract_url_params: url_template %}
+
+{% query_graph 'blog_posts', result_name: 'blog_item', slug: url_params.blog_post -%}
+
+{% comment %} {%- if blog_item.data.content[0].category != null -%}
+	{% query_graph 'blog_categories', result_name: category, id: {{blog_item.data.content[0].category}} -%}
+{%- endif -%} {% endcomment %}
+
+{%- if blog_item.data.content[0].author != null -%}
+	{% query_graph 'author', result_name: author, id: {{blog_item.data.content[0].author}} -%}
+{%- endif -%}
+
+{% capture blog_detail -%}layouts/blog/detail/1{% endcapture -%}
+{% include blog_detail -%}

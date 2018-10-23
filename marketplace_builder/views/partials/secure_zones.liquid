@@ -1,0 +1,9 @@
+{% assign secure_zones_array = secure_zones_string | split: ',' -%}
+{% assign access_allowed = false -%}
+{% for secure_zone in secure_zones_array -%}
+	{% for user_zone in session.current_user.user.properties.secure_zones -%}
+		{% if user_zone == secure_zone -%}
+			{% assign access_allowed = true -%}
+		{% endif -%}
+	{% endfor -%}
+{% endfor -%}

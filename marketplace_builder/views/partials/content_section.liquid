@@ -1,0 +1,6 @@
+{% capture includeURL %}includes/content_section/{{item}}{% endcapture-%}
+<section data-name="{{name}}" data-template="{{item}}" data-type="content_section">
+	<div class="sectionContent">
+		{% include includeURL -%}
+	</div>
+</section>

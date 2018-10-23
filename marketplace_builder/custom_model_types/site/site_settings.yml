@@ -1,0 +1,8 @@
+---
+name: site_settings
+custom_attributes:
+- name: header_template
+  attribute_type: string
+- name: footer_template
+  attribute_type: string
+---

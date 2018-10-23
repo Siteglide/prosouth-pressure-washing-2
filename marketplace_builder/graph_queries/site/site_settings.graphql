@@ -1,0 +1,10 @@
+query site_settings{
+	data: customizations (
+			name: "site_settings"
+		), {
+		results {
+			header_template: property(name: "header_template")
+			footer_template: property(name: "footer_template")
+		}
+	}
+}

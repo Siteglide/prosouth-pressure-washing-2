@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="{{'css/blog/detail/1.min.css' | asset_url}}">
+<section id="blogDetail1" class="backgroundLight sectionPadding">
+	<div class='container'>
+		<div class='row justify-content-center'>
+			<div class='col-12 col-md-10 col-lg-8'>
+				<h1 class="">{{blog_item.data.content[0].title}}</h1>
+				<img class="imageBlock" src="{% if blog_item.data.content[0].main_image contains 'http' -%}{{blog_item.data.content[0].main_image}}{% else -%}{{blog_item.data.content[0].main_image | asset_url}}{% endif -%}" alt="{{blog_item.data.content[0].main_image_alt}}">
+				<div class="infoContainer">
+					<div class='row'>
+						<div class="col col-sm-8">
+							<div class="dateContainer"> 
+								<i class="fal fa-calendar"></i>
+								<p>{{blog_item.data.content[0].created_at | date: "%d %b %y"}}</p>	
+							</div>
+							{% if blog_item.data.content[0].category != null -%}
+								<i class="fal fa-tag"></i>
+								<p><a class="darkLink" href="/{{blog_settings.data.content[0].category_slug}}/{{category.data.content[0].slug}}">{{category.data.content[0].name}}</a></p>
+							{% endif -%}
+						</div>
+						<div class="col col-md-4 authorContainer">
+							<p>by {{author.data.content[0].name}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="blogContent">
+					{{blog_item.data.content[0].blog_content}}
+				</div>
+				<div class="authorContent">
+					<div class="row">
+						<div class="col col-md-6">
+							<div class="imageContainer">
+								<a href="/author/{{author.data.content[0].slug}}">
+									<img src="{% if author.data.content[0].author_image contains 'http' -%}{{author.data.content[0].author_image}}{% else -%}{{author.data.content[0].author_image | asset_url }}{% endif -%}" alt="{{author.data.content[0].image_alt}}"> 
+								</a>
+							</div>
+							<div class="textContainer">
+								<a class="textContainerAnchor" href="/author/{{author.data.content[0].slug}}">
+									<h3>{{author.data.content[0].name}}</h3>
+									<h4>{{author.data.content[0].role}}</h4>
+								</a>
+							</div>
+						</div>
+						<div class="col col-md-6 iconContainer">
+							{% if author.data.content[0].facebook_url != null -%}
+							<a href='{{author.data.content[0].facebook_url}}'><i class="fab fa-facebook autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a>&nbsp;&nbsp;&nbsp;
+							{% endif -%}
+							{% if author.data.content[0].linkedin_url != null -%}
+							<a href='{{author.data.content[0].linkedin_url}}'><i class="fab fa-linkedin autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a>&nbsp;&nbsp;&nbsp;
+							{% endif -%}
+							{% if author.data.content[0].twitter_url != null -%}
+							<a href="{{author.data.content[0].twitter_url}}"><i class="fab fa-twitter autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a>&nbsp;&nbsp;&nbsp;
+							{% endif -%}
+							{% if author.data.content[0].instagram_url != null -%}
+							<a href="{{author.data.content[0].instagram_url}}"><i class="fab fa-instagram autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a>&nbsp;&nbsp;&nbsp; 
+							{% endif -%}
+							{% if author.data.content[0].google_url != null -%} 
+							<a href="{{author.data.content[0].google_url}}"><i class="fab fa-google autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a>&nbsp;&nbsp;&nbsp;
+							{% endif -%}
+							{% if author.data.content[0].pintrest_url != null -%}
+							<a href="{{author.data.content[0].pintrest_url}}"><i class="fab fa-pinterest autoColorBrand" style="color: {{author.data.content[0].social_media_color}};"></i></a> 
+							{% endif -%} 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>

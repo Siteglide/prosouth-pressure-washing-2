@@ -1,0 +1,8 @@
+--- 
+slug: section_data 
+format: html
+layout_name: 
+--- 
+{% capture urlData -%}/includes/{{context.params.type}}/{{context.params.itemid}}{% endcapture-%}
+{% capture responseData %}{% include urlData -%}{% endcapture -%}
+{{responseData | lstrip | html_safe }}

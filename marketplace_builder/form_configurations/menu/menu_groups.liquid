@@ -1,0 +1,14 @@
+---
+name: menu_groups
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    name:
+      validation: { presence: true }
+---
+{% form %}
+	{% assign property = form_builder.fields.properties %}
+	{% include 'form/input', field: property.name, label: 'Name', is_required: true  %}
+	{% submit Save %}
+{% endform -%}

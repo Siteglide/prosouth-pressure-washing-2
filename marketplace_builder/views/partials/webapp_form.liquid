@@ -1,0 +1,6 @@
+{%- assign _enabled = enabled | default: "false" -%}
+{%- assign _expiry_date = expiry_date | default: "2145916800" -%}
+{%- assign _release_date = release_date | default: "now" | date: "%s" -%}
+{%- assign _upload_dir = upload_dir -%}
+{%- assign _layout = layout | default: 'default' -%}
+{%- include_form id, parent_resource_id: id, _enabled: _enabled, _release_date: _release_date, _expiry_date: _expiry_date, _upload_dir: _upload_dir, _layout: _layout -%}

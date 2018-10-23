@@ -1,0 +1,37 @@
+---
+name: faq
+resource: Transactable
+resource_owner: anyone
+redirect_to: /faq 
+configuration:
+  name:
+    validation: { presence: true }
+  properties:
+    title:
+      validation: {}
+    subtitle:
+      validation: {}
+    image_alt:
+      validation: {}
+    description:
+      validation: {}
+    image:
+      validation: {}
+    button_text:
+      validation: {}
+    button_url:
+      validation: {}
+---
+{% form -%}
+  {% input name -%}
+  {% fields_for properties -%}
+    {% input title, as: string, form: properties -%}
+    {% input subtitle, as: string, form: properties -%}
+    {% input image_alt, as: string, form: properties -%}
+    {% input description, as: string, form: properties -%}
+    {% input image, as: string, form: properties -%}
+    {% input button_url, as: string, form: properties -%}
+    {% input button_text, as: string, form: properties -%}
+  {% endfields_for -%} 
+  {% submit Save %}
+{% endform -%}

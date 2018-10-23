@@ -1,0 +1,176 @@
+{% if type == 'js' -%}
+	<script type="text/javascript" src="https://dmtyylqvwgyxw.cloudfront.net/instances/193/assets/scripts/main.js?updated={{ 'now' | date: '%s' }}"></script>
+	<script type="text/javascript" src="https://dmtyylqvwgyxw.cloudfront.net/instances/193/assets/scripts/visualEditor.js?updated={{ 'now' | date: '%s' }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://dmtyylqvwgyxw.cloudfront.net/instances/193/assets/css/visualEditor.min.css?updated={{ 'now' | date: '%s' }}">
+{% else -%}
+	<div class="siteglideVisualEditor" data-asset-url="{{ '' | asset_url}}">
+		<div class="backgroundImageEditContianer">
+			<input type="text" class="backgroundImageEditInput" placeholder="images/image.jpg" value="">
+			<button href="javascript:void(0)" class="backgroundImageEditSubmit">Change</button>
+		</div>
+		<div class="backgroundImageSettingsContianer">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="slider hue"><div class="handle"></div></div>
+						<div class="slider lightness"><div class="handle"></div></div>
+						<!-- <div class="slider opacity"><div class="handle"></div></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="imageEditContianer">
+			<div class="headerContainer">
+				<h3>File Manager</h3>
+				<div class="refreshModal">
+					<i class="fal fa-2x fa-sync"></i>
+				</div>
+				<div class="uploadImage">
+					<i class="fal fa-2x fa-cloud-upload"></i>
+				</div>
+				<div class="closeModal">
+					<i class="fal fa-2x fa-times"></i>
+				</div>
+			</div>
+			<div class="uploadContainer">
+				<form class="imageUpload">
+					<input type="file" name="image">
+				</form>
+				<div class="imagePreview">
+					<div class="previousImage">
+						<img class="prevImagePreview" src="https://d1de24m7r4h8p.cloudfront.net/instances/262/assets/images/team/Robert.jpg?updated=1530051055">
+					</div>
+					<i class="fal fa-3x fa-arrow-right"></i>
+					<div class="newImage">
+						<img class="newImagePreview" src="https://d1de24m7r4h8p.cloudfront.net/instances/262/assets/images/team/David.jpg?updated=1530531776">
+					</div>
+				</div>
+				<h3>Confirm Upload?</h3>
+				<div class="buttonContainer">
+					<a class="button buttonPrimary cancelUpload" href="javascript:void(0)">Cancel</a>
+					<a class="button submitImage" href="javascript:void(0)">Upload</a>
+				</div>
+			</div>
+			<div class="loadingSpinner showSpinner">
+				<img src="{{'system_images/loadingSpinner.gif' | asset_url}}" />
+			</div>
+			<div class="filesContainer"></div>
+			<div class="footerContainer">
+			</div>
+			<!-- <h2>Image Editor</h2>
+			
+			<h3>Upload New Image:</h3>
+			<div class="imageUpload">
+				<input type="file" name="image">
+				<button type="submit" class="button buttonLight" name="button">Upload <i class="fal fa-cloud"></i></button>
+			</div>
+			<h3>Existing Image:</h3>
+			<div class="existingImageContainer">
+				
+			</div> -->
+		<!-- <div class="col align_center">
+			<h4>Current Image: <span class="imageUrl">/Images/Test/Test1.png</span></h4>
+			<img class="imagePreview" src="">
+		</div> -->
+		</div>
+		<div class="quitButtonContainer">
+			<i class="fal fa-2x fa-times-circle"></i>
+		</div>
+		<div class="cancelButtonContainer">
+			<i class="fal fa-2x fa-trash-alt"></i>
+		</div>
+		<div class="publishButtonContainer">
+			<i class="fal fa-2x fa-save"></i>
+		</div>
+		<div class="toolboxContainer">
+			<a href="javascript:void(0)" class="bold" title="Bold">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-bold"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="italic" title="Italic">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-italic"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="underline" title="Underline">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-underline"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="strikethrough" title="Strikethrough">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-strikethrough"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="justifyLeft" title="Align Left">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-align-left"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="justifyCenter" title="Align Center">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-align-center"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="justifyRight" title="Align Right">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-align-right"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="justifyFull" title="Justify">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-align-justify"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="insertUnorderedList" title="Insert Unordered List">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-list-ul"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="insertOrderedList" title="Insert Ordered List">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-list-ol"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="createLink" title="Insert Link">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-link"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" class="insertImage" title="Insert Image">
+				<div class="buttonContainer">
+					<i class="fal fa-2x fa-image"></i>
+				</div>
+			</a>
+			<div class="linkAddContainer">
+				<input onclick="javascript:void(0)" type="text" placeholder="URL" name="" value="">
+				<button type="button" name="button" class="addLinkContainer">Add Link</button>
+				<a href="javascript:void(0)" onclick="removeLink()"><i class="fal fa-times"></i></a>
+			</div>
+		</div>
+		<div class="editOverlay">
+			<div class="editContainer">
+				<i class="fal fa-3x fa-pencil"></i>
+				<h2>Edit Mode</h2>
+			</div>
+		</div>
+		<div class="saveOverlay">
+			<div class="saveContainer">
+				<div class="iconContainer">
+					<i class="fal fa-3x fa-check"></i>
+					<i class="fal fa-spinner-third"></i>
+					<i class="fal fa-circle"></i>
+					<i class="fal fa-times"></i>
+				</div>
+				<div class="textContainer">
+					<h2 class="saving">Saving Changes</h2>
+					<h2 class="failed">Save Failed</h2>
+					<h2 class="success">Save Success!</h2>
+				</div>
+				<div class="errorText" style=""><span class="errorType"></span> Error! Please <a href="javascript:void(0)" class="reloadPublish">retry saving,</a> or contact us for more information<p></p></div>
+			</div>
+		</div>
+	</div>
+{% endif -%}

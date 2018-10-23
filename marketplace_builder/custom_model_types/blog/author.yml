@@ -1,0 +1,32 @@
+---
+name: Author
+custom_attributes:
+- name: name
+  attribute_type: string
+- name: slug
+  attribute_type: string
+- name: title
+  attribute_type: string
+- name: subtitle
+  attribute_type: string
+- name: description
+  attribute_type: string
+- name: role
+  attribute_type: string
+- name: author_image
+  attribute_type: string
+- name: author_image_alt
+  attribute_type: string
+- name: linkedin_url
+  attribute_type: string 
+- name: facebook_url
+  attribute_type: string
+- name: twitter_url
+  attribute_type: string
+- name: instagram_url
+  attribute_type: string
+- name: google_url
+  attribute_type: string
+- name: pintrest_url
+  attribute_type: string
+---

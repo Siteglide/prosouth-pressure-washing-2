@@ -1,0 +1,14 @@
+{%- capture 'siteglideMeta' -%}Hero Banner||12{%- endcapture -%}
+<link rel="stylesheet" type="text/css" href="{{'css/includes/content_section/12.min.css' | asset_url}}">
+<section class="banner12 backgroundDark" style="background: url({{ background_image | asset_url }}) center center / cover; margin-top: 71px;">
+	<div class="bannerContainer">
+		<h1>{{title}}</h1>
+		<div class="buttonContainer d-flex justify-content-center flex-wrap">
+			<a href="{{primary_button_url}}" class="button buttonLight Primary bannerPrimaryButtonCustom buttonGap-md" style="width: 133.156px;">{{primary_button_text}}</a>
+			<a href="{{secondary_button_url}}" class="button buttonLight buttonTrans bannerSecondaryButtonCustom" style="width: 133.156px;">{{secondary_button_text}}</a>
+		</div>
+		<div class="scrollDownButtonContainer">
+			<a href="#homepage-core-services"><i class="scrollDownIcon mb-10 fal fa-chevron-down fa-2x"></i></a>
+		</div>
+	</div> 
+</section>

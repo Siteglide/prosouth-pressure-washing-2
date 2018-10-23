@@ -1,0 +1,41 @@
+---
+name: testimonials
+resource: Transactable
+redirect_to: /testimonials
+resource_owner: anyone
+configuration:
+  name:
+    validation: { presence: true }
+  properties:
+    title:
+      validation: {}
+    company:
+      validation: {}
+    role:
+      validation: {}
+    quote:
+      validation: {}
+    company_logo:
+      validation: {}
+    company_alt:
+      validation: {}
+    profile_picture:
+      validation: {}
+    profile_alt:
+      validation: {}
+---
+{% form -%}
+{% input name -%}
+{% fields_for properties -%}
+  {% input title, as: string, form: properties -%}
+  {% input company_alt, as: string, form: properties -%}
+  {% input company, as: string, form: properties -%}
+  {% input role, as: string, form: properties -%}
+  {% input quote, as: string, form: properties -%}
+  {% input company_logo, as: string, form: properties -%}
+  {% input profile_picture, as: string, form: properties -%}
+  {% input profile_alt, as: string, form: properties -%}
+{% endfields_for -%}
+
+{% submit Save %}
+{% endform -%}

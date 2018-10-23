@@ -1,0 +1,29 @@
+---
+name: blog_settings
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    posts_per_page:
+      validation: {}
+    slug:
+      validation: {}
+    author_slug:
+      validation: {}
+    category_slug:
+      validation: {}
+    blog_template:
+      validation: {}
+    blog_detail_template:
+      validation: {}     
+---
+{% form -%}
+{% assign property = form_builder.fields.properties %}
+{% include 'form/input', field: property.posts_per_page, label: 'Post Per Page', is_required: false  %}
+{% include 'form/input', field: property.slug, label: 'Slug', is_required: false  %}
+{% include 'form/input', field: property.author_slug, label: 'Author Slug', is_required: false  %}
+{% include 'form/input', field: property.category_slug, label: 'Category Slug', is_required: false  %}
+{% include 'form/input', field: property.blog_template, label: 'Blog Page Template', is_required: false  %}
+{% include 'form/input', field: property.blog_detail_template, label: 'Blog Detail Template', is_required: false  %}
+{% submit Save %}
+{% endform -%}

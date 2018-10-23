@@ -1,0 +1,38 @@
+---
+name: company_information
+custom_attributes:
+- name: name
+  attribute_type: string
+- name: logo
+  attribute_type: string
+- name: logo_white
+  attribute_type: string
+- name: address_line_1
+  attribute_type: string
+- name: address_line_2
+  attribute_type: string
+- name: phone_number
+  attribute_type: string
+- name: email_address
+  attribute_type: string
+- name: twitter_account
+  attribute_type: string
+- name: facebook_account
+  attribute_type: string
+- name: linkedin_account
+  attribute_type: string
+- name: google_plus_account
+  attribute_type: string
+- name: instagram_account
+  attribute_type: string
+- name: vat_number
+  attribute_type: string
+- name: google_analytics_id
+  attribute_type: string
+- name: google_analytics_view_id
+  attribute_type: string
+- name: google_analytics_site_verification
+  attribute_type: string
+- name: active_campaign_id
+  attribute_type: string
+---

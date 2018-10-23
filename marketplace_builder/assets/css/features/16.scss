@@ -1,0 +1,14 @@
+@import '../../bootstrap/breakpointInclude';
+@import '../../site_styles/variables';
+.features16 {
+	.featuresStretchImageContainer {
+		height: 300px;
+		margin-bottom: $sectionPadding;
+		background-size: cover !important;
+		@include media-breakpoint-up(md) {
+			height: 100%; 
+			width: 100%;
+			margin-bottom: 0;
+		}
+	} 
+} 

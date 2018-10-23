@@ -1,0 +1,112 @@
+// main: ../main.scss
+
+// Font
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Patua+One');
+$headingFont: 'Patua One';
+$headingWeightAvaliable: '200,400,600' !default;
+$bodyFont: 'Open Sans';
+$bodyWeightAvaliable: '300' !default;
+$importURL: 'https://fonts.googleapis.com/css?family=' !default;
+
+$h1Weight: 400 !default;
+$h2Weight: 400 !default;
+$h3Weight: 200 !default;
+$h4Weight: 600 !default;
+$h5Weight: 300 !default;
+$h6Weight: 400 !default;
+$bodyWeight: 300 !default;
+$lightFontWeight: 200 !default;
+$heavyFontWeight: 600 !default;
+
+$h1Size: 52px !default;
+$h2Size: 36px !default;
+$h3Size: 28px !default;
+$h4Size: 20px !default;
+$h5Size: 16px !default;
+$h6Size: .75rem !default;
+$bodySize: 16px !default; 
+$line-height: 22px !default;
+// Padding
+
+$sectionPadding: 60px !default;
+
+
+// Border and shadow
+
+$borderRadius: 4px; 
+$borderWidthWide: 5px;
+$borderWidthNormal: 2px;
+$borderWidthThin: 1px;
+$borderStyle: solid;
+// For box shadow- use the mixin. Pass through arguments for size and direction.
+
+// Icons
+
+$iconWidth: 60px;
+
+// Color
+ 
+$lightColor: #fff !default;
+$lightText: #4F4F4F;
+$lightButtonBackground: rgba(0,0,0,0) !default;
+$lightButtonHover: darken($lightColor,15%) !default;
+$lightButtonText: #56CCF2;
+$lightButtonBorder: #212529 !default;
+$lightBorder: #212529 !default;
+
+$greyColor: #F9F6FC;
+$greyText: #4F4F4F; 
+$greyButtonBackground: rgba(0,0,0,0) !default;
+$greyButtonHover: darken($greyColor,15%) !default;
+$greyButtonText: #212529 !default;
+$greyButtonBorder: #212529 !default;
+$greyBorder: #212529 !default; 
+
+$darkColor: #101A29 !default;
+$darkText: #fff !default;
+$darkButtonBackground: rgba(0,0,0,0) !default;
+$darkButtonHover: lighten($darkColor,15%) !default;
+$darkButtonText: #fff !default;
+$darkButtonBorder: #fff !default;
+$darkBorder: #fff !default;
+
+$mediumColor: #2876AC !default;
+$mediumText: #fff !default;
+$mediumButtonBackground: rgba(0,0,0,0) !default;
+$mediumButtonHover: lighten($mediumColor,15%) !default;
+$mediumButtonText: #fff !default;
+$mediumButtonBorder: #fff !default;
+$mediumBorder: #fff !default;
+
+$primaryColor: #411070;
+$primaryText: #fff !default;
+$primaryButtonBackground: rgba(0,0,0,0) !default;
+$primaryButtonHover: lighten($primaryColor,15%) !default;
+$primaryButtonText: #fff !default;
+$primaryButtonBorder: #fff !default;
+$primaryBorder: #fff !default;
+
+$accentColor: #56CCF2;
+$accentText: #fff !default;
+$accentButtonBackground: transparent !default;
+$accentButtonHover: lighten($accentColor,15%) !default;
+$accentButtonText: #fff !default;
+$accentButtonBorder: #fff !default;
+$accentBorder: #fff !default; 
+
+// Button
+
+$buttonBorderWidth: 2px !default;
+$buttonPaddingWidth: 20px !default;
+$buttonPaddingHeight: 5px !default;
+$buttonBorderRadius: 2px;
+
+// Animations
+
+$transitionTime: 500ms !default;
+
+//Bootstrap theme 
+$theme-colors: (
+	"primary": $primaryColor
+); 

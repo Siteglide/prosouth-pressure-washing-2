@@ -1,0 +1,31 @@
+---
+name: log_in
+resource: Session
+---
+{%- assign _log_in_text = log_in_text | default: "Log In" -%}
+{%- assign _redirect = redirect | default: context.location.pathname -%}
+{%- assign _error_msg = error_msg | default: "Error: Fields have been left empty" -%}
+<div class="container">
+	<div class="{{custom_class}}">
+		{% form -%}
+			<div class="row">
+				<div class="col">
+					<label for="email">Email Address</label>
+					<input type="email" class="form-control" name="form[email]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" name="form[password]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<button class="submitButton" type="button" onclick="logInProcess(this,'{{_redirect}}','{{_error_msg}}')">{{_log_in_text}}</button>
+				</div>
+			</div>
+			<div class="form-error"></div>
+		{% endform -%}
+	</div>
+</div>

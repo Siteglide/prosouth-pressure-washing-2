@@ -1,0 +1,18 @@
+---
+name: FAQ
+custom_attributes:
+- name: title
+  attribute_type: string
+- name: subtitle
+  attribute_type: string 
+- name: description
+  attribute_type: string
+- name: image
+  attribute_type: string 
+- name: image_alt
+  attribute_type: string
+- name: button_text
+  attribute_type: string
+- name: button_url
+  attribute_type: string
+---

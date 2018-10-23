@@ -1,0 +1,16 @@
+---
+name: blog_settings
+custom_attributes:
+- name: posts_per_page
+  attribute_type: string
+- name: slug
+  attribute_type: string
+- name: author_slug
+  attribute_type: string
+- name: category_slug
+  attribute_type: string
+- name: blog_template
+  attribute_type: string
+- name: blog_detail_template
+  attribute_type: string 
+---

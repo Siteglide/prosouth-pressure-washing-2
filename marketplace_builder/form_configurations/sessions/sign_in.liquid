@@ -1,0 +1,12 @@
+---
+name: sign_in
+resource: Session
+configuration:
+  email:
+  password:
+---
+{% form %}
+  {% input email %}
+  {% input password %}
+  {% submit 'Log In' %}
+{% endform %}

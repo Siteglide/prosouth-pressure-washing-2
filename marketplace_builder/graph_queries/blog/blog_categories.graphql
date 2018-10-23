@@ -1,0 +1,31 @@
+query blog_categories(
+	$id: ID
+	$slug: String
+	){
+		data: customizations(
+			sort:[
+				{
+					name: "slug",
+					order: "asc"
+				}
+			],
+			id: $id
+			name: "blog_categories"
+			properties:[{
+				name: "slug",
+				value: $slug
+				}]
+	  ),{
+		total_entries
+    content: results{
+      id
+			name: property(name:"name")
+      slug: property(name: "slug")
+			description: property(name:"description")
+      top_level: property(name: "top_level")
+			parent_id: property(name:"parent_id")
+			category_image: property(name: "category_image") 
+			background_image: property(name: "background_image") 
+    }
+  }
+}

@@ -1,0 +1,34 @@
+---
+name: blog_categories
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    name:
+      validation: { presence: true }
+    slug:
+      validation: { presence: true }
+    description:
+      validation: {}
+    top_level:
+      validation: {}
+    parent_id:
+      validation: {}
+    category_image:
+      validation: {}   
+    background_image:
+      validation: {}    
+---
+{% form -%}
+ {% fields_for properties -%}
+  {% input name, as: string, form: properties -%}
+  {% input slug, as: string, form: properties -%}
+  {% input description, as: string, form: properties -%}
+  {% input top_level, as: boolean, form: properties -%}
+  {% input parent_id, as: string, form: properties -%}
+  {% input category_image, as: string, form: properties -%}
+  {% input background_image, as: string, form: properties -%}
+ {% endfields_for -%} 
+
+ {% submit Save %}
+{% endform -%}

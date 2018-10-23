@@ -1,0 +1,24 @@
+@import '../../../bootstrap/breakpointInclude';
+#team1 {
+	a {
+		.card_container {
+			padding: 0;		
+		}
+		.positionRelative {
+			position: relative;
+		}
+		.fillCardWidth {		
+			width: 100%;
+		}
+	}
+	a {
+		&:hover {
+			text-decoration: none !important;
+			.card_container { 
+				p {
+					text-decoration: none !important;
+				}
+			}
+		}
+	} 
+}

@@ -1,0 +1,12 @@
+---
+name: log_out
+resource: Session
+---
+{%- assign _log_out_text = log_out_text | default: "Log Out" -%}
+{%- assign _redirect = redirect | default: context.location.pathname -%}
+<div class="hidden_logout_form" style="display:none">
+	{% form %}
+		{% submit 'logout' %}
+	{% endform %}
+</div>
+<button class="{{custom_class}}" onclick="logOutProcess('{{_redirect}}')">{{_log_out_text}}</button>

@@ -1,0 +1,65 @@
+@import '../../../site_styles/variables_include';
+
+#blog2{
+	a{
+		&:hover {
+			text-decoration: none;
+			.blogListAuthorLabel {
+				color: inherit !important;
+				transition: color $transitionTime;
+				-webkit-transition: color $transitionTime;
+				color: $primaryColor !important; 
+			}
+			
+		}
+		
+	}
+	.imageContainer{
+		position: relative;
+		span{ 
+			position: absolute;
+			left: 15px;
+			top: 15px;
+			color: $primaryText;
+			padding: 2px 7px;
+			background-color: $primaryColor; 
+			border-radius: 4px;
+			z-index: 1;
+			transition: background-color $transitionTime;
+			&:hover {
+				background-color: lighten($primaryColor, 20%);   
+			}
+		}
+		.imageBlock{
+			height: 200px;
+			width: 100%;
+			transition: opacity $transitionTime;
+			-webkit-transition: opacity $transitionTime;
+		}
+		
+		&:hover {
+			cursor: pointer;
+			h2 {
+				color: $primaryColor !important;
+			}
+			.imageBlock{
+				opacity: 0.7 !important; 
+			}
+		}
+		
+	} 
+	h2 {
+		transition: color $transitionTime;
+	}
+	.hoverWrap {
+		&:hover {
+			h2 {
+				color: $primaryColor;
+				cursor: pointer;
+			}
+		}
+	}
+	.pl-10 {
+		padding-left: 10px !important;
+	}
+}

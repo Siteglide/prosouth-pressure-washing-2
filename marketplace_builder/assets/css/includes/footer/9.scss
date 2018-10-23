@@ -1,0 +1,67 @@
+@import '../../site_styles/variables_include';
+@import '../../bootstrap/breakpointinclude';
+.footer9{
+	padding: 60px !important;
+	.socialColumn {
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			justify-content: flex-end;
+		}
+		.social-container {
+			@include media-breakpoint-up(lg) {
+				max-width: 100%;
+				display: inline-block;
+				margin-left: auto;
+				margin-right: 0;
+				h4 {
+					display: block;
+					width: auto;
+				}
+				.text-h3 {
+					display: inline;
+				}
+			}
+		}
+		.autoColorBrand {
+			width: 25px;
+			height: 25px;
+			color: #333333;
+		}
+	} 
+	
+	
+	.nav-link {
+		
+		@include media-breakpoint-down(xs) {
+			padding-left: 16px !important; 
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&.backgroundDark {
+		.nav-link {
+			color: $darkText;
+		}
+	}
+	&.backgroundLight {
+		.nav-link {
+			color: $lightText;
+		}
+	}
+	&.backgroundMedium {
+		.nav-link {
+			color: $mediumText;
+		}
+	}
+	&.backgroundPrimary {
+		.nav-link {
+			color: $primaryText;
+		}
+	}
+	&.backgroundGrey {
+		.nav-link {
+			color: $greyText;
+		}
+	}
+} 

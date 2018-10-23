@@ -1,0 +1,55 @@
+---
+name: sign_up
+resource: User
+configuration:
+  email:
+  password:
+  name:
+  mobile_number:
+  profiles:
+    user:
+      enabled:
+      properties:
+        secure_zones:
+---
+{%- assign _sign_up_text = sign_up_text | default: "Sign Up" -%}
+{%- assign _redirect = redirect | default: context.location.pathname -%}
+{%- assign _error_msg = error_msg | default: "Error: Fields have been left empty" -%}
+<div class="container">
+	<div class="{{custom_class}}">
+		{% form -%}
+			<div class="row">
+				<div class="col">
+					<label for="name">Name*</label>
+					<input type="name" class="form-control" name="form[name]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label for="mobile_number">Phone Number</label>
+					<input type="mobile_number" class="form-control" name="form[mobile_number]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label for="email">Email Address*</label>
+					<input type="email" class="form-control" name="form[email]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label for="password">Password*</label>
+					<input type="password" class="form-control" name="form[password]">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<button class="submitButton" type="button" onclick="signUpProcess(this,'{{_redirect}}','{{_error_msg}}')">{{_sign_up_text}}</button>
+				</div>
+			</div>
+			<div class="form-error"></div>
+			<input type="hidden" value="true" name="form[profiles_attributes][user_attributes][enabled]" />
+			<input type="hidden" value="{{secure_zone_ids}}" name="form[profiles_attributes][user_attributes][properties_attributes][secure_zones]" />
+		{% endform -%}
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<nav class="col-9">
+	<ul> 
+		{% for item in menu_result.topLevel.results -%}
+			{% if item.is_parent -%}
+				<li class="dropdown">
+					<a {% if menu_result.topLevel.results[forloop.index0].add_class != '' -%}class="{{menu_result.topLevel.results[forloop.index0].add_class}}"{% endif -%} href="{{menu_result.topLevel.results[forloop.index0].link_url}}">{{menu_result.topLevel.results[forloop.index0].link_name}}</a>
+					<div class="dropdownTriggerMobile">
+						<i class="fal fa-angle-down"></i>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownTrigger">
+							<i class="fal fa-angle-down"></i>
+						</div>
+						<div class="dropdownContent">
+							{% query_graph sub_menu, parentID: item.id, result_name: 'innerMenu' %}
+							{% for item in innerMenu.children.results -%}
+								<a {% if menu_result.topLevel.results[forloop.index0].add_class != '' -%}class="{{item.add_class}}"{% endif -%} href="{{item.link_url}}">{{item.link_name}}</a>
+							{% endfor -%} 
+						</div>
+					</div>
+				</li>
+			{% else -%}
+				<li>
+					<a {% if menu_result.topLevel.results[forloop.index0].add_class != '' -%}class="{{menu_result.topLevel.results[forloop.index0].add_class}}"{% endif -%} href="{{menu_result.topLevel.results[forloop.index0].link_url}}">{{menu_result.topLevel.results[forloop.index0].link_name}}</a>
+				</li>
+			{% endif -%}
+		{% endfor-%}
+	</ul>
+</nav>
+<div class="col-9 responsiveMenu">
+	<div class="menuContainer">
+		<div class="menuItemContainer">
+			<div class="bar bar1"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar3"></div>
+		</div>
+	</div>
+</div>
+<script>
+	$('.dropdownTrigger, .dropdownTriggerMobile').click(function(){
+		$(this).toggleClass('dropdownOpen')
+		$(this).parent().find('.dropdownContent').slideToggle()
+	})
+	$(window).click(function() {
+		$('.dropdownContent').slideUp()
+		$('.dropdownOpen').removeClass('dropdownOpen')
+	});
+	$('.dropdownTrigger,.dropdownTriggerMobile, .dropdownContent').click(function(event){
+	  event.stopPropagation();
+	});
+	$('.menuItemContainer').click(function(){
+		$("body, #header1, #header1 nav").toggleClass('menuOpen')
+	})
+</script>

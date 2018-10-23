@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="{{'css/blog/list/mainList.min.css' | asset_url}}">
+<section id="blogList" class='backgroundLight sectionPadding'>
+	<div class='container'>
+		<div class='row'>
+			<div class="col-12 col-md-8">
+				{% if context.params.query != null -%}
+					{% if blog_item.data.total_entries != 0 -%}
+						<h3>Search Term: {{context.params.query | url_decode | escape }} <a href="/blog"><i class="fal fa-times-square"></i></a></h3>
+					{% else-%}
+						<h3>No results found. <a href="blog">Reset Search</a></h3>
+					{% endif -%}
+				{% endif -%}
+				{% for item in blog_item.data.content -%}
+					{% comment %} {%- if item.category != null -%}
+						{% query_graph 'blog_categories', result_name: category, id: {{item.category}} -%}
+					{%- endif -%} {% endcomment %}
+					{%- if item.author != null -%}
+						{% query_graph 'author', result_name: author, id: {{item.author}} -%}
+					{%- endif -%}
+					{%- include '/layouts/blog/blog_page/list/1' -%}
+				{% endfor -%} 
+				{% query_graph 'blog_total', result_name: 'total_posts' -%}
+				{% if total_posts.data.total_entries > blog_item.data.size and context.params.query == null -%} 
+					{% assign pagination = total_posts.data.total_entries | times: '1.0' | divided_by: 20 | ceil -%}
+					{% if pagination != 1-%}
+						<div class='blogPagination'>
+						{% for item in (1..pagination) -%}
+							<a {% if forloop.index == pageNumber -%}class='inactive'{% endif -%} href="/blog?page={{forloop.index}}">{{forloop.index}}</a>
+						{% endfor -%}
+						</div>
+						{% endif -%}
+				{% endif -%}
+			</div>
+			<link rel="stylesheet" href="{{'css/blog/list/sidebar.min.css' | asset_url}}">
+			<div class="col-12 col-md-4" id="blogSidebar">
+				{% if context.location.search.slug == blogAuthorSlug and author.data.content[0].team_id != null -%}
+					{%- query_graph 'team', result_name: teamMember, id: {{author.data.content[0].team_id}} -%}
+					{% if teamMember.data.total_entries > 0 and author.data.content[0].team_id ==  teamMember.data.content[0].id -%}
+						<div class="row">
+							<div class="col-12 teamContainer columnPadding"> 
+								<img width="100%" src="{% if author.data.content[0].author_image contains 'http' -%}{{author.data.content[0].author_image}}{% else -%}{{author.data.content[0].author_image | asset_url}}{% endif -%}" alt="{{author.data.content[0].image_alt}}">
+								<h3>{{author.data.content[0].name}}</h3>
+								<h5>{{author.data.content[0].role}}</h5>
+								{% assign authorName = author.data.content[0].name | split: " " %}
+								<a href="/{{teamSlug}}/{{teamMember.data.content[0].slug}}">More about {{authorName[0]}} <i class="fal fa-angle-right"></i></a> 
+							</div>
+						</div>
+					{% endif -%}
+				{% endif -%}
+				<div class="row">
+					<div class="col-12">
+						<h3 class="searchTitle">Search</h3>
+					</div>
+					<div class="col-12 columnPadding">
+						<form action="/blog" class="blogSearch">
+							<input type="text" placeholder="Search the Blog" name="query">
+							<button type="button" id="searchSubmit" class="button buttonPrimary">Submit</button>
+							<script type="text/javascript">
+								$('#searchSubmit').click(function(){
+									window.location.assign("/blog?query="+$('.blogSearch input').val().replace(/[^a-z0-9\s]/gi, ''))
+								})
+							</script>
+						</form>
+					</div>
+				</div>
+				{%- query_graph 'blog_categories', result_name: categoryList -%}
+				<div class="row">
+					<div class="col-12">
+						<h3>Categories</h3>
+					</div>
+					{% for item in categoryList.data.content -%}
+						<div class="col-12 columnPadding">
+							<a href="/blog-category/{{item.slug}}">
+								<div class="blogCategory {% if url_params.blog_category == item.slug -%}grey{% endif -%}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{% if item.category_image contains 'http' -%}{{item.category_image}}{% else -%}{{item.category_image | asset_url}}{% endif -%}');">
+									<div class="overlayContainer"> 
+										<h3>{{item.name}}</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+					{% endfor -%}
+				</div>
+				{%- query_graph authorList, result_name: authorList -%}
+				<div class="row authorContainer">
+					<div class="col-12">
+						<h3>Authors</h3>
+					</div>
+					{% for item in authorList.data.content -%}
+						<div class="col-6 col-sm-4 col-md-6 col-lg-4 columnPadding">
+							<a class="authorAnchorSidebar" href="/author/{{item.slug}}">
+								{% if item.author_image -%}
+									<img src="{% if item.author_image contains 'http' -%}{{item.author_image}}{% else -%}{{item.author_image | asset_url}}{% endif -%}" alt="{{item.image_alt}}">
+								{% endif -%}
+								<h5>{{item.name}}</h5>
+							</a>
+						</div>
+					{% endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

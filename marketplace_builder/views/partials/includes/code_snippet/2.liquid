@@ -1,0 +1,44 @@
+{%- capture 'siteglideMeta' -%}HTML Head||2{%- endcapture -%}
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="{{ form_authenticity_token }}" name="csrf-token">
+<meta content="authenticity_token" name="csrf-param">
+
+<link rel="stylesheet" href="{{ 'system/css/bootstrap/bootstrap.min.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'css/main.min.css' | asset_url}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ 'font-awesome/svg-with-js/js/fontawesome-all.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="https://dmtyylqvwgyxw.cloudfront.net/instances/193/assets/scripts/siteglide.js?updated={{ 'now' | date: '%s' }}"></script>
+<link rel="stylesheet" href="https://dmtyylqvwgyxw.cloudfront.net/instances/193/assets/css/siteglide.min.css?updated={{ 'now' | date: '%s' }}"/>
+<link rel="stylesheet" href="{{ 'font-awesome/svg-with-js/css/fa-svg-with-js.css' | asset_url }}">
+<link rel="shortcut icon" href="{{ 'images/fido/paw-favicon.png' | asset_url }}">
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('pre').each(function() {
+			$(this).html(JSON.stringify(JSON.parse($(this).html()), null, 4));
+		});
+		
+		// Add smooth scrolling to all links
+		$("a").on('click', function(event) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+				// Prevent default anchor click behavior
+				event.preventDefault();
+
+				// Store hash
+				var hash = this.hash;
+				var location = $(hash).offset().top -85
+				// Using jQuery's animate() method to add smooth page scroll
+				// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				$('html, body').animate({
+					scrollTop: location
+				}, 800, function(){
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					window.location.hash = hash;
+				});
+			} // End if
+		});
+	});
+</script>

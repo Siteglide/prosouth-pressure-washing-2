@@ -1,0 +1,4 @@
+name: user
+custom_attributes:
+- name: secure_zones
+  attribute_type: array

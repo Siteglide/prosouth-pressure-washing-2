@@ -1,0 +1,56 @@
+---
+name: blog_posts
+custom_attributes:
+- name: name
+  attribute_type: string
+- name: slug
+  attribute_type: string
+- name: title
+  attribute_type: string
+- name: subtitle
+  attribute_type: string
+- name: description
+  attribute_type: string
+- name: blog_image
+  attribute_type: string
+- name: image_alt
+  attribute_type: string
+- name: custom_1
+  attribute_type: string
+- name: custom_2
+  attribute_type: string
+- name: custom_3
+  attribute_type: string
+- name: banner_template
+  attribute_type: string
+- name: banner_title
+  attribute_type: string
+- name: banner_subtitle
+  attribute_type: string
+- name: banner_background
+  attribute_type: string
+- name: banner_image
+  attribute_type: string
+- name: banner_primary_button_text
+  attribute_type: string
+- name: banner_primary_button_url
+  attribute_type: string
+- name: banner_secondary_button_text
+  attribute_type: string
+- name: banner_secondary_button_url
+  attribute_type: string
+- name: list_image 
+  attribute_type: string
+- name: list_image_alt
+  attribute_type: string
+- name: main_image
+  attribute_type: string
+- name: main_image_alt
+  attribute_type: string
+- name: author
+  attribute_type: string
+- name: category
+  attribute_type: string
+- name: blog_content
+  attribute_type: text
+---

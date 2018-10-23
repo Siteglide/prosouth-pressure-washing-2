@@ -1,0 +1,12 @@
+{%- capture 'siteglideMeta' -%}Small Banner||11{%- endcapture -%}
+<link rel="stylesheet" type="text/css" href="{{'css/includes/content_section/11.min.css' | asset_url}}">
+<section class="banner11 backgroundDark" style="background: url('{{ background_image | asset_url }}') center center / cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col textContainer">
+				<h1>{{title}}</h1>
+				<h3>{{subtitle}}</h3>
+			</div>
+		</div>
+	</div>
+</section>

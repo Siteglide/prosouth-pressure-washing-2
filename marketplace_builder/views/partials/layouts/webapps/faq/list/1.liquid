@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="{{'css/webapps/faq/list/1.min.css' | asset_url}}"> 
+<div class="faq1 container">
+	<div class="row">
+		{% for item in webappData.data.content -%}
+		<div class="col-12">
+			<a href="#{{item.slug}}" class="question d-flex align-items-center">
+				<i class="fa fa-chevron-right"></i>
+				<h5 class="mb-0 ml-2">{{item.properties.title}}</h5>
+			</a>
+		</div>
+		{% endfor -%}
+	</div>
+</div>
+<div class="subSectionColor">
+	<div class="faq1 container">
+		<div class="row columnPadding">
+			{% for item in webappData.data.content -%}
+			<div class="col-12 answer" id="{{item.slug}}">
+				<h4>{{item.properties.title}}</h4>
+				<p>{{item.properties.description}}</p>
+				<hr class="bottomRule">
+			</div>
+			{% endfor -%}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+---
+slug: blog-author
+layout_name: templates/1
+---
+{% query_graph 'blog_settings', result_name: 'blog_settings' -%}
+
+{% capture url_template %}/{{blog_settings.data.content[0].author_slug}}/{blog_author}{% endcapture -%}
+{% assign url_params = current_full_path | extract_url_params: url_template %}
+
+{% query_graph 'author', result_name: author, slug: url_params.blog_author -%} 
+
+{% query_graph 'blog_posts', result_name: blog_item, author: author.data.content[0].id -%} 
+
+{% capture author_name %}Posts by {{author.data.content[0].title}}{% endcapture-%}
+
+{%- include 'content_section', item: "11", title: author_name, background_image: author.data.content[0].banner_background -%}
+
+{% capture blog_page_template %}/layouts/blog/blog_page/{{blog_settings.data.content[0].blog_template}}{% endcapture -%}
+{%- include blog_page_template -%}

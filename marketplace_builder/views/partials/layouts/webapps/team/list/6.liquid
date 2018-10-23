@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ 'css/webapps/team/list/6.min.css' | asset_url }}">
+<section class="webappContent fdb-block team-6" id="team6">
+	<div class="container">
+		<div class="row">
+			{% for item in webappData.data.content -%}
+				<div data-id="{{item.id}}" class="col-sm-6 col-md-{{columns | default: "3"}}">
+					<div class="columnPadding">
+						<a href="/team-item/{{item.slug}}">
+							<img data-field="profile_image" alt="image" class="img-fluid" src="{{item.properties.profile_image | asset_url}}">
+						</a>
+						<a href="/team-item/{{item.slug}}">
+							<h4 data-field="name">{{item.name}}</h4>
+						</a>
+						<p data-field="role">{{item.properties.role}}</p>
+						<p data-field="description">{{item.properties.description}}</p>
+					</div>
+				</div>
+			{% endfor -%}
+		</div>
+	</div>
+</section>

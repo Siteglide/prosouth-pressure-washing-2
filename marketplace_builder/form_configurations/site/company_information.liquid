@@ -1,0 +1,62 @@
+---
+name: company_information
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    name:
+      validation: { }
+    logo:
+      validation: { }
+    logo_white:
+      validation: { }
+    address_line_1:
+      validation: { }
+    address_line_2:
+      validation: { }
+    phone_number:
+      validation: { }
+    email_address:
+      validation: { }
+    twitter_account:
+      validation: { }
+    facebook_account:
+      validation: { }
+    linkedin_account:
+      validation: { }
+    google_plus_account:
+      validation: { }
+    instagram_account:
+      validation: { }
+    vat_number:
+      validation: { }
+    google_analytics_id:
+      validation: { }
+    google_analytics_view_id:
+      validation: { }
+    google_analytics_site_verification:
+      validation: { }
+    active_campaign_id:
+      validation: { }
+---
+{% form %}
+  {% assign property = form_builder.fields.properties %}    
+  {% include 'form/input', field: property.name, label: 'Name', is_required: false  %}
+  {% include 'form/input', field: property.logo, label: 'Logo', is_required: false  %}
+  {% include 'form/input', field: property.logo_white, label: 'Logo White', is_required: false  %}
+  {% include 'form/input', field: property.address_line_1, label: 'Address Line 1', is_required: false %}
+  {% include 'form/input', field: property.address_line_2, label: 'Address Line 2', is_required: false %}
+  {% include 'form/input', field: property.phone_number, label: 'Phone Number', is_required: false %}
+	{% include 'form/input', field: property.email_address, label: "Email Address", is_required: false %}
+  {% include 'form/input', field: property.twitter_account, label: 'Twitter Account', is_required: false %}
+	{% include 'form/input', field: property.facebook_account, label: 'Facebook Account', is_required: false %}
+  {% include 'form/input', field: property.linkedin_account, label: 'LinkedIn Account', is_required: false %}
+	{% include 'form/input', field: property.google_plus_account, label: 'Google Plus Account', is_required: false %}
+  {% include 'form/input', field: property.instagram_account, label: 'Instagram Account', is_required: false %}
+	{% include 'form/input', field: property.vat_number, label: 'VAT Number', is_required: false %}
+	{% include 'form/input', field: property.google_analytics_id, label: "Google Analytics ID", is_required: false %}
+  {% include 'form/input', field: property.google_analytics_view_id, label: 'Google Analytics View ID', is_required: false %}
+	{% include 'form/input', field: property.google_analytics_site_verification, label: 'Google Analytics Site Verification', is_required: false %}
+	{% include 'form/input', field: property.active_campaign_id, label: 'Active Campaign ID', is_required: false %}
+  {% submit Save %}
+{% endform %}

@@ -1,0 +1,20 @@
+{%- capture 'siteglideMeta' -%}Main||1{%- endcapture -%}
+{% include 'site/constants' -%}
+<!doctype html>
+<html lang="en">
+	<head>
+		{% include 'code_snippet', item: '1', name: 'SEO' -%}
+		{% include 'code_snippet', item: '2', name: 'HTML Head' -%}
+	</head>
+	<body>
+		<section id ="visualEditor" style="display: none">
+			{% include 'site/visualEditor'-%}
+		</section>
+		{% include 'header', item: "1" -%}
+		<main>
+			{{ content_for_layout }}
+		</main>
+		{% include 'footer', item: "1" -%}
+		{% include 'site/visualEditor' type: 'js'-%}
+	</body>
+</html>

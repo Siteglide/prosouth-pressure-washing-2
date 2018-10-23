@@ -1,0 +1,236 @@
+@import './mixins';
+
+.fdb-block {
+  font-family: $bodyFont;
+  font-size: $bodySize;
+  line-height: $line-height;
+  @include font-smoothing(on);
+  text-rendering: optimizelegibility;
+  color: $darkColor;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+ 
+
+  &.fdb-viewport {
+    min-height: calc(100% - 2 * #{$sectionPadding});
+
+    .container {
+      min-height: calc(100% - 2 * #{$sectionPadding});
+    }
+  }
+
+  &.fdb-image-bg {
+    color: mix($darkColor, $lightColor, 5%);  
+  }
+
+  .fdb-box {
+    background: $lightColor;
+    color: $darkColor;
+    padding: 60px 40px;
+    @include border-radius($borderRadius);
+    @include froala-box-shadow(2);
+    overflow: hidden;
+  }
+
+  .fdb-touch {
+    border-top: $borderStyle $borderWidthWide $primaryColor;
+  }
+
+  // Headings
+ 
+  .font-weight-light {
+    font-weight: 300;
+  }
+
+  img {
+    @include border-radius($borderRadius);
+
+    + p, + h3, + h4 { 
+      margin-top: 20px;
+    }
+
+    + h1, + h2 {
+      margin-top: 40px;
+    }
+  }
+
+  .col-fill-left {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .col-fill-right {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  img.fdb-icon {
+    width: auto;
+    width: $iconWidth;
+  }
+
+  img.fdb-icon-round {
+    width: auto;
+    width: $iconWidth;
+    @include border-radius($iconWidth);
+  }
+
+  .row-100 {
+    height: 100px;
+    width: 100%;
+  }
+
+  .row-50 {
+    height: 50px;
+    width: 100%;
+  }
+
+  .row-70 {
+    height: 70px;
+    width: 100%;
+  }
+}
+
+footer {
+  padding: calc(0.5 * #{$sectionPadding}) 0 !important;
+
+  &.footer-large {
+    padding: $sectionPadding 0 !important
+  }
+
+  &.bg-dark {
+    background: $darkColor;
+    color: mix($darkColor, $lightColor, 5%);
+
+    a {
+      color: mix($darkColor, $lightColor, 5%);
+    }
+  }
+
+  a {
+    color: $lightText;
+  }
+}
+
+header {
+  background-color: $lightColor;
+
+  .navbar-nav {
+    a.nav-link {
+      color: $greyText;
+
+      &:hover {
+        color: $primaryText;
+      }
+    }
+
+    .active {
+      a.nav-link {
+        color: $darkText;
+      }
+    }
+  }
+
+  .navbar-toggler-icon {
+  	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  &.bg-dark {
+    .navbar-nav {
+      a.nav-link {
+        color: $darkText;
+
+        &:hover {
+          color: $primaryColor; 
+        }
+      }
+
+      .active {
+        a.nav-link { 
+          color: $darkText;
+        }
+      }
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+header + header {
+  border-top: $borderStyle $borderWidthThin $darkBorder; // here
+}
+
+.bg-dark {
+  background-color: $darkColor;
+  color: $darkText;
+}
+
+.bg-gray {
+  background-color: $greyColor;
+  color: $greyText;
+}
+
+.br {
+  @include border-radius($borderRadius);
+  overflow: hidden;
+}
+
+.br-0 {
+  @include border-radius(0 !important);
+}
+
+.heart {
+  color: #df584e;
+  font-weight: bold;
+}
+
+*.text-light {
+  font-weight: $bodyWeight !important;
+}
+
+.sl-1 {
+  @include froala-box-shadow(2);
+  z-index: 2;
+}
+
+table {
+  tr.no-border {
+    th, td {
+      border-top: 0;
+    }
+  }
+}
+
+.shadow2 {
+  @include froala-box-shadow(2);
+} 
+
+.shadow1 {
+  @include froala-box-shadow(1);
+}

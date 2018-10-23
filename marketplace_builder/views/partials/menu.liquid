@@ -1,0 +1,3 @@
+{% query_graph menu, result_name: menu_result, menu_id: id %}
+{% capture includeURL %}layouts/menus/{{layout | default: 'default'}}{% endcapture-%}
+{% include includeURL -%}

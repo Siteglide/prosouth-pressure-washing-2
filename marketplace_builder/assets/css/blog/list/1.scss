@@ -1,0 +1,127 @@
+@import "../../../bootstrap/breakpointInclude";
+
+.blogContainer20 {
+	&.detail {
+		min-height: inherit!important;
+
+		.Content {
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)!important;
+			border: 0 solid #E5E5E5!important;
+			position: relative!important;
+			min-height: inherit!important; 
+
+			.ContentContainer {
+				padding: 10px 0;
+				margin-bottom: 0;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			.FooterContainer { 
+				border-top: 0 solid #F6F6F6!important;
+				left: inherit;
+				right: inherit;
+				bottom: inherit;
+				position: relative;
+
+				div {
+					padding: 20px 0 0;
+				}
+			}
+		}
+	}
+
+	.Content {
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+		transition: all 250ms;
+		border: 1px solid #E5E5E5;
+		background: #fff;
+		min-height: 570px;
+
+		.ImageContainer {
+			max-width: 100%;
+			margin: 0 auto;
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 280px;
+			object-fit: cover;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.ContentContainer {
+			padding: 10px 20px;
+			background: #fff;
+			margin-bottom: 60px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 100px;
+			}
+		}
+
+		.FooterContainer {
+			background: #fff;
+			border-top: 1px solid #F6F6F6;
+			margin: 0;
+			left: 16px;
+			right: 16px;
+			bottom: 16px;
+			position: absolute;
+			@include media-breakpoint-down(sm) {
+				.column-12 {
+					padding-bottom: 0;
+					text-align: center;
+				}
+			}
+
+			p {
+				display: inline-block;
+				margin-bottom: 5px;
+				line-height: 12px;
+				font-size: 14px!important;
+
+				svg {
+					color: #bcbcbc;
+					margin-right: 5px;
+					vertical-align: middle;
+				}
+			}
+
+			h6 {
+				display: inline-block;
+				padding: 0;
+				font-size: 25px;
+				font-weight: 100;
+				color: #e6e6e6;
+				margin: 0 10px;
+			}
+
+			.author {
+				text-align: right;
+				@include media-breakpoint-down(sm) {
+					text-align: center;
+				}
+
+				img {
+					max-height: 30px;
+					vertical-align: middle;
+					border-radius: 50%;
+				}
+
+				p {
+					vertical-align: middle;
+					margin-right: 5px;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		&:hover {
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.075);
+			transition: all 250ms;
+		}
+	}
+}

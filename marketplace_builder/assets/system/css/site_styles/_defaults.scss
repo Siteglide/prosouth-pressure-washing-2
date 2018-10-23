@@ -1,0 +1,777 @@
+// main: ../main.scss 
+
+// Fonts
+@import 'mixins';
+@import url('#{$importURL}#{$headingFont}:#{$headingWeightAvaliable}|#{$bodyFont}:#{$bodyWeightAvaliable}');  
+@import '../bootstrap/breakpointInclude'; 
+h1,h2,h3,h6{
+	font-family: $headingFont, sans-serif !important;
+	line-height: $line-height; 
+}
+h1{
+	font-weight: $h1Weight;
+	font-size: $h1Size; 
+	line-height: 53px;
+	@include media-breakpoint-down(sm) {
+		font-size: $h1Size * 0.8; 
+		line-height: 53px * 0.8;
+	}
+}
+h2{
+	font-weight: $h2Weight;  
+	font-size: $h2Size;
+	line-height: 43px;
+	@include media-breakpoint-down(sm) {
+		font-size: $h2Size * 0.8; 
+		line-height: 43px * 0.8;
+	}
+}
+h3{
+	font-weight: $h5Weight;
+	font-size: $h5Size;
+	@include media-breakpoint-down(sm) {
+		font-size: $h3Size * 0.8; 
+	}
+}
+
+h4{
+	font-weight: $h4Weight !important;
+	font-size: $h4Size; 
+	font-family: $bodyFont, sans-serif!important;
+	line-height: 27px;
+	@include media-breakpoint-down(sm) {
+		font-size: $h4Size * 0.8; 
+		line-height: 27px * 0.8;
+	}
+}
+h5{
+	font-weight: $h5Weight;
+	font-size: $h5Size;
+	font-family: $bodyFont, sans-serif!important;
+	line-height: 22px;
+}
+h6{
+	font-weight: $h6Weight;
+	font-size: $h6Size;
+}
+p{
+	font-family: $bodyFont, sans-serif!important;
+	font-weight: $bodyWeight!important;
+	font-size: $bodySize;
+	@include media-breakpoint-down(sm) {
+		font-size: $bodySize * 1; 
+	}
+}
+
+// Padding
+
+.sectionPadding{
+	padding: $sectionPadding 0;
+	@include media-breakpoint-down(sm) {
+		padding: ($sectionPadding*0.8) 0; 
+	}
+}
+.sectionPaddingLarge{
+	padding: ($sectionPadding / 0.5) 0;
+	@include media-breakpoint-down(sm) {
+		padding: ($sectionPadding*1.6) 0; 
+	}
+}
+.sectionPaddingSmall{
+	padding: ($sectionPadding / 2) 0;
+	@include media-breakpoint-down(sm) {
+		padding: ($sectionPadding*0.4) 0; 
+	}
+}
+.sectionPaddingTop{
+	padding: $sectionPadding 0 0 0;
+	@include media-breakpoint-down(sm) {
+		padding: ($sectionPadding*0.8) 0 0 0;
+	}
+}
+.sectionPaddingBottom{
+	padding: 0 0 $sectionPadding 0;
+	@include media-breakpoint-down(sm) {
+		padding: 0 0 ($sectionPadding*0.8) 0;
+	}
+}
+.sectionPaddingSmallTop{
+	padding: ($sectionPadding / 2) 0 0 0;
+	@include media-breakpoint-down(sm) {
+		padding: ($sectionPadding * 0.4) 0 0 0;
+	}
+}
+.sectionPaddingSmallBottom{
+	padding: 0 0 ($sectionPadding / 2) 0;
+	@include media-breakpoint-down(sm) {
+		padding: 0 0 ($sectionPadding * 0.8) 0;
+	}
+}
+.columnPadding {
+	padding-top: ($sectionPadding / 4) !important;
+	padding-bottom: ($sectionPadding / 4) !important;
+//	height: 100%;
+}
+.rowCushionColumnPadding {
+	margin-top: ($sectionPadding / -4);
+	margin-bottom: ($sectionPadding / -4);
+}
+// Alignment
+
+.contentLeft, .align_left {
+	text-align: left;
+}
+.contentCenter, .align_center {
+	text-align: center;
+}
+.contentRight, .align_right {
+	text-align: right;
+}
+.columnCenter{
+	margin: 0 auto;
+}
+.columnMiddle{
+	align-self: center;
+	-webkit-align-self: center;
+}
+.flexCenter{
+	justify-content: center;
+}
+.flexCenterAround{
+	justify-content: space-around;
+}
+.reverseColumns{
+	flex-direction: row-reverse;
+}
+.inlineFlex{
+	display: inline-flex;
+}
+
+// Background Colors
+.sectionPadding,section,footer,header,[id*="banner"] {
+	a {
+		.icon {
+			transition: opacity $transitionTime;
+		}
+		&:hover {
+			.icon {
+				&.notFa {
+					opacity: 0.5; 
+				}
+			}
+		}
+	}
+	svg.svg-inline--fa.iconDark{
+		color: $darkColor !important;
+	}
+	svg.svg-inline--fa.iconLight{
+		color: $lightColor;
+	}
+	svg.svg-inline--fa.iconGrey{
+		color: $greyColor;
+	}
+	svg.svg-inline--fa.iconMedium{
+		color: $mediumColor;
+	}
+	svg.svg-inline--fa.iconPrimary{
+		color: $primaryColor;
+	}
+	svg.svg-inline--fa.iconAccent{
+		color: $accentColor;
+	}
+	
+	&.backgroundLight{
+		background-color: $lightColor; 
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $lightText;
+		}
+		li {
+			a {
+				color: $lightText; 
+			}
+		}
+		hr {
+			background-color: $lightText; 
+		}
+		.btn,.button{
+			background: $lightButtonBackground;
+			color: $lightButtonText;
+			border-color: $lightButtonBorder;
+			&:hover {
+				background: darken($lightColor, 10%); 
+			}
+		}
+		.svg-inline--fa{
+			color: $lightText;
+		}
+		.autoColorBrand {
+			color: $lightText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $darkColor;
+			}
+		}
+	}
+	
+	&.backgroundGrey{
+		background-color: $greyColor;
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $greyText;
+		}
+		li {
+			a {
+				color: $lightText;
+			}
+		}
+		hr {
+			background-color: $greyText; 
+		}
+		.btn,.button{
+			background: $greyButtonBackground;
+			color: $greyButtonText;
+			border-color: $greyButtonBorder;
+			&:hover {
+				background: darken($greyColor, 10%);
+			}
+		}
+		.svg-inline--fa{
+			color: $greyText;
+		}
+		.autoColorBrand {
+			color: $greyText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $darkColor;
+			}
+		}
+	}
+	&.backgroundDark{
+		background-color: $darkColor; 
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $darkText;
+		}
+		hr {
+			background-color: $darkText; 
+		}
+		li {
+			a {
+				color: $darkText;
+			}
+		}
+		.btn,.button{
+			background: $darkButtonBackground;
+			color: $darkButtonText;
+			border-color: $darkButtonBorder;
+			&:hover {
+				background: lighten($darkColor, 10%);
+			}
+		}
+		.svg-inline--fa{
+			color: $darkText;
+		}
+		.autoColorBrand {
+			color: $darkText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $lightColor;
+			}
+		}
+	}
+	&.backgroundMedium{
+		background-color: $mediumColor;
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $mediumText;
+		}
+		hr {
+			background-color: $mediumText; 
+		}
+		li {
+			a {
+				color: $darkText;
+			}
+		}
+		.btn,.button{
+			background: $mediumButtonBackground;
+			color: $mediumButtonText;
+			border-color: $mediumButtonBorder;
+			&:hover {
+				background: lighten( $mediumColor, 10% );
+			}
+		}
+		.svg-inline--fa{
+			color: $mediumText;
+		}
+		.autoColorBrand {
+			color: $mediumText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $lightColor;
+			}
+		}
+	}
+	&.backgroundPrimary{
+		background-color: $primaryColor;
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $primaryText;
+		}
+		hr {
+			background-color: $primaryText; 
+		}
+		li {
+			a {
+				color: $darkText;
+			}
+		} 
+		.btn,.button{
+			background: $primaryButtonBackground;
+			color: $primaryButtonText;
+			border-color: $primaryButtonBorder;
+			&:hover {
+				background: lighten($primaryColor, 10%);
+			}
+		}
+		.svg-inline--fa{
+			color: $primaryText;
+		}
+		.autoColorBrand {
+			color: $primaryText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $lightColor;
+			}
+		}
+	}
+	&.backgroundAccent{
+		background-color: $accentColor;
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $accentText;
+		}
+		hr {
+			background-color: $accentText; 
+		}
+		li {
+			a {
+				color: $darkText;
+			}
+		}
+		.btn,.button{
+			background: $accentButtonBackground;
+			color: $accentButtonText;
+			border-color: $accentButtonBorder;
+			&:hover {
+				background: lighten($accentColor, 15%);
+			}
+		}
+		.svg-inline--fa{
+			color: $accentText;
+		}
+		.autoColorBrand {
+			color: $accentText;
+		}
+		.menuItemContainer {
+			.bar {
+				background: $lightColor;
+			}
+		}
+	}
+	.card_container{
+		h1,h2,h3,h4,h5,h6,p,.darkLink{
+			color: $lightText;
+		}
+		hr {
+			background-color: $lightText; 
+		}
+		.btn,.button{
+			background: $lightButtonBackground;
+			color: $lightButtonText;
+			border-color: $lightButtonBorder;
+		}
+		.svg-inline--fa{
+			color: $lightText;
+		}
+		background-color: $lightColor !important;  
+	}
+}
+a {
+	&:hover {
+		.card_container {
+			text-decoration: none !important;
+		}
+		
+		
+	}
+}
+
+// Button 
+a,.button,.btn,button {
+	cursor: pointer;
+}
+section .btn,.button{
+	padding: $buttonPaddingHeight $buttonPaddingWidth;
+	border-width: $buttonBorderWidth;
+	border-radius: $buttonBorderRadius; 
+	border-style: solid;
+	transition: all $transitionTime;
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+	&.buttonLight{
+		background: $lightColor !important;
+		border-color: $lightColor;
+		&:not(.buttonTrans){
+			color: $lightText;
+		}
+		&:hover{
+			transition: all $transitionTime;
+			&:not(.buttonTrans){
+				color: $lightText;
+			}
+			background: darken($lightColor, 20%) !important;
+			border-color: darken($lightColor, 20%) ;
+		}
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $lightText;
+			}
+			background: darken($lightColor, 10%) !important;
+			border-color: darken($lightColor, 10%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $lightColor;
+			&:hover{
+				border-color: lighten($lightColor, 15%);
+				color: lighten($lightColor, 15%);
+			}
+			&:active{
+				border-color: darken($lightColor, 15%);
+				color: darken($lightColor, 15%);
+			}
+		}
+	} 
+	&.buttonGrey{
+		background: $greyColor !important;
+		border-color: $greyColor;
+		&:not(.buttonTrans){
+			color: $greyText;
+		}
+		&:hover{
+			transition: all $transitionTime;
+			&:not(.buttonTrans){
+				color: $greyText;
+			}
+			background: darken($greyColor, 10%) !important;
+			border-color: darken($greyColor, 10%) !important;
+		}
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $greyText;
+			}
+			background: darken($greyColor, 10%) !important;
+			border-color: darken($greyColor, 10%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $greyColor;
+			&:hover{
+				border-color: lighten($greyColor, 15%);
+				color: lighten($greyColor, 15%);
+			}
+			&:active{
+				border-color: darken($greyColor, 15%); 
+				color: darken($greyColor, 15%);
+			}
+		}
+	}
+	&.buttonDark{
+		background: $darkColor !important;
+		border-color: $darkColor;
+		&:not(.buttonTrans){
+			color: #fff;
+		}
+		&:hover{
+			transition: all $transitionTime;
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: lighten($darkColor, 20%) !important;
+			border-color: lighten($darkColor, 20%) !important;
+		}
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: darken($darkColor, 20%) !important;
+			border-color: darken($darkColor, 20%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $darkColor;
+			&:hover{
+				border-color: lighten($darkColor, 15%);
+				color: lighten($darkColor, 15%);
+			}
+			&:active{
+				border-color: darken($darkColor, 15%);
+				color: darken($darkColor, 15%);
+			}
+		}
+	}
+	&.buttonMedium{
+		background: $mediumColor !important;
+		border-color: $mediumColor;
+		&:not(.buttonTrans){
+			color: #fff; 
+		}
+		&:hover{
+			transition: all $transitionTime;
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: lighten($mediumColor, 10%) !important;
+			border-color: lighten($mediumColor, 10%) !important;
+		} 
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: darken($mediumColor, 10%) !important;
+			border-color: darken($mediumColor, 10%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $mediumColor;
+			&:hover{
+				border-color: lighten($mediumColor, 15%);
+				color: lighten($mediumColor, 15%);
+			}
+			&:active{
+				border-color: darken($mediumColor, 15%);
+				color: darken($mediumColor, 15%);
+			}
+		}
+	}
+	&.buttonPrimary{
+		background: $primaryColor !important;
+		border-color: $primaryColor !important;
+		transition: all $transitionTime;
+		&:not(.buttonTrans){
+			color: #fff;
+		}
+		&:hover{
+			
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: lighten($primaryColor, 10%) !important;
+			border-color: lighten($primaryColor, 10%) !important; 
+		}
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: darken($primaryColor, 10%) !important;
+			border-color: darken($primaryColor, 10%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $primaryColor !important; 
+			&:hover{
+				border-color: lighten($primaryColor, 15%);
+				color: lighten($primaryColor, 15%);
+			}
+			&:active{
+				border-color: darken($primaryColor, 15%);
+				color: darken($primaryColor, 15%);
+			}
+		}
+	}
+	&.buttonAccent{
+		background: $accentColor !important; 
+		border-color: $accentColor !important;
+		&:not(.buttonTrans){
+			color: #fff;
+		}
+		&:hover{
+			transition: all $transitionTime;
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: lighten($accentColor, 10%) !important;
+			border-color: lighten($accentColor, 10%) !important;
+		}
+		&:active {
+			transition: all $transitionTime; 
+			&:not(.buttonTrans){
+				color: $darkText;
+			}
+			background: darken($accentColor, 10%) !important;
+			border-color: darken($accentColor, 10%) !important;
+		}
+		&.buttonTrans{
+			background: transparent !important;
+			border-color: $accentColor !important;
+			color: $accentColor;
+			transition: all $transitionTime;
+			&:hover{
+				border-color: lighten($accentColor, 15%);
+				color: lighten($accentColor, 15%); 
+			}
+			&:active{
+				border-color: darken($accentColor, 15%);
+				color: darken($accentColor, 15%);
+			}
+		}
+	} 
+}  
+
+a {
+	img {
+		transition: opacity $transitionTime;  
+	}
+}
+a {
+	&:hover {
+		.img-fluid,.img-fluid-round,.img-fluid-round-small {
+			opacity: 0.8;
+		} 
+	}
+}
+
+// Bootstrap Override
+
+.columnPadding>[class*="col-"]{
+	padding-top: 15px!important;
+	padding-bottom: 15px!important;	
+}
+
+
+.rowReverse{
+	-webkit-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+b, strong {
+	font-weight: $heavyFontWeight !important;
+}
+
+// Lightbox
+
+.lb-data{
+	.lb-caption {
+		margin: 15px 0;
+		font-weight: $bodyWeight;
+		font-size: $bodySize;
+		font-family: $bodyFont, sans-serif!important;
+		line-height: $line-height;
+	}   
+}
+.lb-outerContainer {
+	margin-bottom: 15px;
+}
+
+// Temporary change to pes menu position. Delete when pes menu is obsolete.
+.pesMenuContainer {
+	right: auto !important;
+	left: 10px;
+}
+
+// Added froala styles
+
+.img-fluid-round {
+    border-radius: 50% !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+}
+
+.img-fluid-round-small {
+    border-radius: 50% !important;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+      
+}
+
+a {
+    &:hover {
+        .img-fluid,.img-fluid-round,.img-fluid-round-small {
+            opacity: 80%;
+        }
+    }
+}
+
+.mb-1rem {
+    margin-bottom: -1rem;
+}
+
+.m-b-auto {
+    margin-bottom: auto;
+    margin-top: 0;
+}
+
+.card_container {
+    @include froala-box-shadow(1);
+    padding: 15px;
+   // height: 100%;
+    &:hover {
+        @include froala-box-shadow(2);
+    }
+}  
+a {
+    &:hover {
+        .card_container { 
+            text-decoration: none;
+        }
+    }
+} 
+
+.autoColorBrand {
+	transition: color 0.5s;
+}
+.autoColorBrand.fa-linkedin {
+    &:hover {
+        color: #007bb6 !important;
+    }
+}
+.autoColorBrand.fa-facebook {
+    &:hover {
+        color: #3b5998 !important;
+    }
+}
+.autoColorBrand.fa-twitter {
+    &:hover {
+        color: #00aced !important;
+    }
+}
+.autoColorBrand.fa-instagram {
+    &:hover {
+        color: #517fa4 !important;
+    }
+}
+.autoColorBrand.fa-google {
+    &:hover {
+        color: #dd4b39 !important;
+    }
+}
+.autoColorBrand.fa-pinterest {
+    &:hover {
+        color: #cb2027 !important;
+    }
+} 

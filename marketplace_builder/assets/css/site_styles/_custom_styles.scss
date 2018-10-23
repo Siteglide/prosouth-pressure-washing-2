@@ -1,0 +1,35 @@
+// main: ../main.scss
+
+.pesMenuContainer{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	height: 40px;
+	width: 45px;
+	background: rgba(17,17,17,0.93);
+	padding: 10px;
+	z-index: 100;  
+	cursor: pointer;
+	.pesMenuItemContainer{
+		display: flex;
+    justify-content: space-between;
+    flex-direction: column;  
+    height: 100%;
+		.bar{
+	    height: 2px;
+	    width: 100%;
+	    background: #fff;
+		}
+	}
+}
+.pesEditor{
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	background: #fffffff5;
+	display: none;
+	overflow: scroll;
+}

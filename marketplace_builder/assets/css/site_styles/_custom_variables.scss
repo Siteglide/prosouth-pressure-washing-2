@@ -1,0 +1,72 @@
+// main: ../main.scss
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Patua+One');
+$headingFont: 'Patua One';
+// $headingWeightAvaliable: '100,300,400';
+$bodyFont: 'Open Sans';
+// $bodyWeightAvaliable: '300';
+// $importURL: 'https://fonts.googleapis.com/css?family=';
+
+$h1Weight: 400;
+$h2Weight: 400;
+$h3Weight: 400;
+$h4Weight: 600;
+$h5Weight: 400;
+// $h6Weight: 300;
+$bodyWeight: 400;
+
+// $h1Size: 2.5rem; 
+// $h2Size: 2rem;
+// $h3Size: 1.75rem;
+// $h4Size: 1.5rem;
+// $h5Size: 1.25rem;
+// $h6Size: 1rem;
+// $bodySize: 1rem;
+
+// Padding
+
+// $sectionPadding: 60px;
+
+// Color
+
+// $lightColor: #fff;
+$lightText: #4F4F4F;
+// $lightButtonBackground: transparent;
+$lightButtonText: $accentColor;
+// $lightButtonBorder: #212529;
+
+$greyColor: #F9F6FC;
+$greyText: #4F4F4F; 
+// $greyButtonBackground: transparent;
+// $greyButtonText: #212529;
+// $greyButtonBorder: #212529; 
+
+// $darkColor: #141414;
+// $darkText: #fff;
+// $darkButtonBackground: transparent;
+// $darkButtonText: #fff;
+// $darkButtonBorder: #fff;
+
+// $mediumColor: #0b0f32;
+// $mediumText: #fff;
+// $mediumButtonBackground: transparent;
+// $mediumButtonText: #fff;
+// $mediumButtonBorder: #fff;
+
+$primaryColor: #411070;
+// $primaryText: #fff;
+// $primaryButtonBackground: transparent;
+// $primaryButtonText: #fff;
+// $primaryButtonBorder: #fff;
+
+$accentColor: #56CCF2;
+// $accentText: #fff;
+// $accentButtonBackground: transparent;
+// $accentButtonText: #fff;
+// $accentButtonBorder: #fff;
+
+// Button
+
+// $buttonBorderWidth: 2px;
+// $buttonPaddingWidth: 20px;
+// $buttonPaddingHeight: 5px;
+$buttonBorderRadius: 2px;

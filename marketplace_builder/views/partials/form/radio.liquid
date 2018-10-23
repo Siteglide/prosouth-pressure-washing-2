@@ -1,0 +1,39 @@
+{% assign field_options = options | to_hash %}
+{% assign selectedValue = field.value | append: '' %}
+
+{% if field.validation.rules.presence != blank or required == true %}
+  {% assign is_required = true %}
+{% endif %}
+
+{% assign _errors = field.validation.errors %}
+
+<div class="form-group">
+  <p {% if is_required %}class="form-required"{% endif %}>
+    {% if is_required %}<span>*</span>{% endif %}
+    {{ label }}
+  </p>
+
+  {% for opt in field_options %}
+    <div class="form-check {% if inline %}form-check-inline{% endif %}">
+      <input
+        class="form-check-input {% if _errors != empty %}is-invalid{% endif %}"
+        type="radio"
+        name="{{ field.name }}"
+        id="{{ field.name }}[{{ forloop.index }}]"
+        value="{{ opt.value }}"
+        {{ opt.data_attributes }}
+        {% if opt.selected or selectedValue == opt.value %}checked{% endif %}
+      >
+
+      <label class="form-check-label" for="{{ field.name }}[{{ forloop.index }}]">
+        {{ opt.text }}
+      </label>
+    </div>
+  {% endfor %}
+
+  {% if _errors != empty %}
+    <div class="invalid-feedback">
+      {{ _errors | join: ', ' }}
+    </div>
+  {% endif %}
+</div>

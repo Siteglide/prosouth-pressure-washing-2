@@ -1,0 +1,32 @@
+@import '../../bootstrap/breakpointInclude';
+@import '../../site_styles/variables'; 
+.contacts5 {
+	.svg-inline--fa,.iconClass {
+		height: 40px;
+		width: 40px;
+		
+	}
+	.iconClass {
+		color: white;
+		transition: color $transitionTime;
+	}
+	a {
+		&:hover {
+			.iconClass {
+				color: $primaryColor !important;
+			}
+		}
+	}
+	#google-map {
+		height: 300px;
+	  }
+	.mapMarkerImage {
+	width: 60%; 
+	
+	}
+	.contactGreyBar {
+		svg {
+			margin-bottom: 10px;
+		}
+	}
+}

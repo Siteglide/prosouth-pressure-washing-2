@@ -1,0 +1,19 @@
+---
+slug: blog
+layout_name: templates/1
+---
+{%- include 'content_section', item: '11', title: 'Blog', background_image: "images/fido/Hero.jpg" -%}
+
+{% if context.params.query != null -%}
+	{% assign searchQuery = context.params.query | url_decode | escape %}
+	{% query_graph 'blog_search', result_name: blog_item, search: searchQuery -%}
+{% else-%}
+	{% assign pageNumber = context.params.page | url_decode | escape | default: 1 | ceil %}
+	{% assign perPageTotal = 20 | ceil %}
+	{% query_graph 'blog_posts', result_name: blog_item, page: pageNumber, perPage: perPageTotal -%}
+{% endif -%}
+
+{% assign numberOfPages = webappTotal.data.total_entries | divided_by: 20 | ceil  %}
+
+{% capture blog_page_template %}/layouts/blog/blog_page/1{% endcapture -%}
+{%- include blog_page_template -%}

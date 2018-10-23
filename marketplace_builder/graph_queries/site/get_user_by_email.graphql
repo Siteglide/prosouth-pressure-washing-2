@@ -1,0 +1,13 @@
+query get_user_by_email($email: String!) {
+  user(email: $email) {
+    id
+    slug
+    first_name
+    email
+    verified_at
+    default_profile: profile(profile_type: "consumer") {
+      password_token: property(name: "password_token")
+      confirmation_token: property(name: "confirmation_token")
+    }
+  }
+}

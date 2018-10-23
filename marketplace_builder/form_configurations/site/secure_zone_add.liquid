@@ -1,0 +1,30 @@
+---
+name: secure_zone_add
+resource: User
+resource_owner: anyone
+return_to: /
+redirect_to: /
+configuration:
+  profiles:
+    user:
+      enabled:
+      properties:
+        secure_zones:
+default_payload: >
+  {% if form %}
+    {
+      "profiles_attributes": {
+        "user_attributes": {
+          "enabled": "1"
+        }
+      }
+    }
+  {% endif %}
+---
+{% form %}
+	{%- query_graph 'current_user', result_name: user -%}
+
+	<input type="text" name="form[profiles_attributes][user_attributes][properties_attributes][secure_zones]" id="form[profiles_attributes][user_attributes][properties_attributes][secure_zones]" value="{{user.current_user.user.properties.secure_zones | join: ','}}" />
+
+	{% submit AddZone %}
+{% endform %}

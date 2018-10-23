@@ -1,0 +1,38 @@
+---
+name: menu
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    name:
+      validation: { presence: true }
+    link_name:
+      validation: { presence: true }
+    link_url:
+      validation: { presence: true }
+    link_target:
+      validation: { }
+    link_parent:
+      validation: { }
+    is_parent:
+      validation: { }
+    add_class:
+      validation: { }
+    order:
+      validation: { }
+    menu_id:
+        validation: { }
+---
+{% form %}
+  {% assign property = form_builder.fields.properties %}    
+  {% include 'form/input', field: property.name, label: 'Name', is_required: true  %}
+  {% include 'form/input', field: property.link_name, label: 'Link Name', is_required: true  %}
+  {% include 'form/input', field: property.link_url, label: 'Link URL', is_required: true  %}
+  {% include 'form/input', field: property.link_target, label: 'Link Target', is_required: false %}
+  {% include 'form/input', field: property.link_parent, label: 'Link Parent', is_required: false %}
+  {% include 'form/checkbox', field: property.is_parent, label: 'Is parent?', is_required: false %}
+	{% include 'form/input', field: property.add_class, label: "Class'", is_required: false %}
+  {% include 'form/input', field: property.order, label: 'Order', is_required: true %}
+	{% include 'form/input', field: property.menu_id, label: 'Menu Group ID', is_required: true %}
+  {% submit Save %}
+{% endform %}

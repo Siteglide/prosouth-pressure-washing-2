@@ -1,0 +1,20 @@
+---
+name: Testimonials
+custom_attributes:
+- name: title
+  attribute_type: string
+- name: company
+  attribute_type: string
+- name: role
+  attribute_type: string
+- name: quote
+  attribute_type: string
+- name: company_alt
+  attribute_type: string
+- name: company_logo
+  attribute_type: string
+- name: profile_picture
+  attribute_type: string
+- name: profile_alt
+  attribute_type: string
+---

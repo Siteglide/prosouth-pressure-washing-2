@@ -1,0 +1,10 @@
+query blog_total
+{
+  data: customizations(
+    name: "blog_posts"
+		per_page: 10000
+  ),
+  {
+		total_entries
+  }
+}

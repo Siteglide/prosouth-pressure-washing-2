@@ -1,0 +1,22 @@
+{%- capture 'siteglideMeta' -%}Site Header||1{%- endcapture -%}
+<link rel="stylesheet" href="{{'css/includes/header/1.min.css' | asset_url}}">
+<header id="header1" class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				<a href="/">
+					<img src="{{company_information.logo | asset_url }}" alt="{{company_information.name}} Logo">
+				</a> 
+			</div>
+			{% include 'menu', id:'27030' -%}
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+	// Remember header height
+	var headerHeight;
+	$( document ).ready(function() {
+		headerHeight = $('#header1').height();
+		$("#header1 .dropdownContent").css("top", headerHeight);
+	});
+</script>

@@ -1,0 +1,18 @@
+query blog_settings
+{
+  data: customizations(
+    name: "blog_settings"
+  ),
+  {
+		total_entries
+    content: results{
+      id
+			posts_per_page: property(name: "posts_per_page")
+			slug: property(name: "slug")
+			author_slug: property(name: "author_slug")
+			category_slug: property(name: "category_slug")
+			blog_template: property(name: "blog_template")
+      blog_detail_template: property(name: "blog_detail_template")
+		}
+  }
+}

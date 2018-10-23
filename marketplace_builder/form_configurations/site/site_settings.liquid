@@ -1,0 +1,17 @@
+---
+name: site_settings
+resource: Customization
+resource_owner: anyone
+configuration:
+  properties:
+    header_template:
+      validation: { }
+    footer_template:
+      validation: { }
+---
+{% form %}
+  {% assign property = form_builder.fields.properties %}    
+  {% include 'form/input', field: property.header_template, label: 'Header Template', is_required: false %}
+  {% include 'form/input', field: property.footer_template, label: 'Footer Template', is_required: false %}
+  {% submit Save %}
+{% endform %}

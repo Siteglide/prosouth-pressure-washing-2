@@ -1,0 +1,11 @@
+{%- assign _limit = limit | default: 100 -%}
+{%- assign _sort_type = sort_type | default: "name.raw" -%}
+{%- assign _sort_order = sort_order | default: "asc" -%}
+{%- assign _timestamp = "now" | date: "%s" -%}
+{% query_graph webapp, result_name: 'webappData', webApp: type, limit: _limit, sort_type: _sort_type, timestamp: _timestamp -%}
+{% capture includeURL -%}layouts/webapps/{{type}}/list/{{layout}}{% endcapture-%}
+<section data-name="{{type}}" data-template="{{layout}}" data-type="webapp">
+	<div class="sectionContent">
+		{% include includeURL -%}
+	</div>
+</section>

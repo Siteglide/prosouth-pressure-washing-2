@@ -1,0 +1,6 @@
+---
+name: menu_groups
+custom_attributes:
+- name: name
+  attribute_type: string
+---

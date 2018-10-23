@@ -1,0 +1,52 @@
+@import '../../../bootstrap/breakpointInclude';
+@import '../../../site_styles/variables';
+#portfolio1{
+	.element-item {
+		img {
+			transition: opacity $transitionTime;
+			max-width: 100%; 
+			height: auto;
+		}
+		&:hover {
+			img {
+				opacity: 0.8; 
+			}
+		}
+	}
+	button {
+		border-width: 0;
+		border-radius: 0;
+		background-color: rgba(0,0,0,0);
+		transition: border-width 0s;
+		margin-bottom: 2px;
+		&.is-checked {
+			border-width: 0;
+			border-bottom-width: 2px;
+			border-color: $primaryColor; 
+			margin-bottom: 0px;
+			@include media-breakpoint-down(sm) {
+				border-width: 2px;
+				
+			}
+		}
+		&:focus {
+			outline-width: 0 !important;
+		}
+		&:hover {
+			cursor: pointer;
+			border-bottom-width: 2px;
+			margin-bottom: 0px;	 
+			border-color: $primaryColor; 
+				@include media-breakpoint-down(sm) {
+					border-width: 2px;
+				}
+		} 
+	}
+	.lb-nav {
+		a.lb-prev{
+		
+			opacity: 1 !important;	
+		
+		}
+	}
+} 

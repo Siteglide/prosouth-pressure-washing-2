@@ -1,0 +1,90 @@
+---
+name: blog_posts
+resource: Customization
+redirect_to: /blog
+resource_owner: anyone
+configuration:
+  properties:
+    name:
+      validation: {}
+    slug:
+      validation: {}
+    title:
+      validation: {}
+    subtitle:
+      validation: {}
+    image_alt:
+      validation: {}
+    description:
+      validation: {}
+    custom_1:
+      validation: {}
+    custom_2:
+      validation: {}
+    custom_3:
+      validation: {}
+    banner_template:
+      validation: {}
+    banner_title: 
+      validation: {}
+    banner_subtitle:
+      validation: {}
+    banner_background:
+      validation: {}
+    banner_image:
+      validation: {}
+    banner_primary_button_text:
+      validation: {}
+    banner_primary_button_url:
+      validation: {}
+    banner_secondary_button_text:
+      validation: {}
+    banner_secondary_button_url:
+      validation: {}
+    list_image_alt:
+      validation: {}
+    main_image_alt:
+      validation: {}
+    author:
+      validation: {}
+    category:
+      validation: {}
+    blog_content:
+      validation: {}
+    blog_image:
+      validation: {}
+    main_image:
+      validation: {}
+    list_image:
+      validation: {}
+---
+{% form -%}
+{% assign property = form_builder.fields.properties %}
+{% include 'form/input', field: property.name, label: 'Name', is_required: false  %}
+{% include 'form/input', field: property.slug, label: 'Slug', is_required: false  %}
+{% include 'form/input', field: property.title, label: 'title', is_required: false  %}
+{% include 'form/input', field: property.subtitle, label: 'subtitle', is_required: false  %}
+{% include 'form/input', field: property.image_alt, label: 'image_alt', is_required: false  %}
+{% include 'form/input', field: property.description, label: 'description', is_required: false  %}
+{% include 'form/input', field: property.custom_1, label: 'custom_1', is_required: false  %}
+{% include 'form/input', field: property.custom_2, label: 'custom_2', is_required: false  %}
+{% include 'form/input', field: property.custom_3, label: 'custom_3', is_required: false  %}
+{% include 'form/input', field: property.banner_template, label: 'banner_template', is_required: false  %}
+{% include 'form/input', field: property.banner_title, label: 'banner_title', is_required: false  %}
+{% include 'form/input', field: property.banner_subtitle, label: 'banner_subtitle', is_required: false  %}
+{% include 'form/input', field: property.banner_background, label: 'banner_background', is_required: false  %}
+{% include 'form/input', field: property.banner_image, label: 'banner_image', is_required: false  %}
+{% include 'form/input', field: property.banner_primary_button_text, label: 'banner_primary_button_text', is_required: false  %}
+{% include 'form/input', field: property.banner_primary_button_url, label: 'banner_primary_button_url', is_required: false  %}
+{% include 'form/input', field: property.banner_secondary_button_text, label: 'banner_secondary_button_text', is_required: false  %}
+{% include 'form/input', field: property.banner_secondary_button_url, label: 'banner_secondary_button_url', is_required: false  %}
+{% include 'form/input', field: property.list_image_alt, label: 'list_image_alt', is_required: false  %}
+{% include 'form/input', field: property.main_image_alt, label: 'main_image_alt', is_required: false  %}
+{% include 'form/input', field: property.author, label: 'author', is_required: false  %}
+{% include 'form/input', field: property.category, label: 'category', is_required: false  %}
+{% include 'form/textarea', field: property.blog_content, label: 'blog_content', is_required: false  %}
+{% include 'form/input', field: property.blog_image, label: 'blog_image', is_required: false  %}
+{% include 'form/input', field: property.main_image, label: 'main_image', is_required: false  %}
+{% include 'form/input', field: property.list_image, label: 'list_image', is_required: false  %}
+ {% submit Save %}
+{% endform -%}

@@ -1,0 +1,30 @@
+query sub_menu($parentID: String) {
+  children: customizations (
+      is_deleted: false,
+      name: "menu"
+  		properties:[{
+        name: "link_parent",
+        exists: true
+      },{
+        name: "link_parent",
+        value: $parentID
+      }]
+		sort:[{
+      name: "properties.order",
+      order: "asc"
+    }]
+		), {
+    results {
+      id
+      name: property(name: "name")
+			link_name: property(name: "link_name")
+			link_url: property(name: "link_url")
+			link_target: property(name: "link_target")
+			link_parent: property(name: "link_parent")
+			is_parent: property(name: "is_parent")
+			add_class: property(name: "add_class")
+			order: property(name: "order")
+			menu_id: property(name: "menu_id")
+    }
+  }
+}

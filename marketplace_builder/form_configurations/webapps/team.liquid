@@ -1,0 +1,58 @@
+---
+name: team
+resource: Transactable
+redirect_to: /
+resource_owner: anyone
+configuration:
+  name:
+    validation: { presence: true }
+  slug:
+    validation: { presence: true }
+  properties:
+    title:
+      validation: {}
+    subtitle:
+      validation: {}
+    profile_image:
+      validation: {}
+    banner_image:
+      validation: {}
+    image_alt:
+      validation: {}
+    description:
+      validation: {}
+    role:
+      validation: {}
+    linkedin_url:
+      validation: {}
+    facebook_url:
+      validation: {}
+    twitter_url:
+      validation: {}
+    instagram_url:
+      validation: {}
+    google_url:
+      validation: {}
+    pintrest_url:
+      validation: {}
+---
+{% form -%}
+	{% input name -%}
+	{% input slug -%}
+	{% fields_for properties -%}
+		{% input title, as: string, form: properties -%}
+		{% input subtitle, as: string, form: properties -%}
+		{% input profile_image, as: string, form: properties -%}
+		{% input banner_image, as: string, form: properties -%}
+		{% input image_alt, as: string, form: properties -%}
+		{% input description, as: string, form: properties -%}
+		{% input role, as: string, form: properties -%}
+		{% input linkedin_url, as: string, form: properties -%}
+		{% input facebook_url, as: string, form: properties -%}
+		{% input twitter_url, as: string, form: properties -%}
+		{% input instagram_url, as: string, form: properties -%}
+		{% input google_url, as: string, form: properties -%}
+		{% input pintrest_url, as: string, form: properties -%}
+	{% endfields_for -%}
+	{% submit Save %}
+{% endform -%}

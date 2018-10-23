@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{'css/webapps/testimonial/list/1.min.css' | asset_url}}"> 
+<div class="testimonial1 container">
+  <div class="row columnPadding align-items-center justify-content-center">
+    {% for item in webappData.data.content -%}
+			<div class="col-12 col-md-{{section.columns}}">
+				<div class="">
+						<div class="row align-items-center">
+							<div class="col-7 col-sm-6 col-md-3 mt-4 mt-md-0 ml-auto mr-auto mr-md-0 order-sm-2">
+								<img alt="{{item.properties.profile_alt}}" class="img-fluid" src="{{item.properties.profile_picture}}"/>
+							</div>
+							<div class="col-12 col-sm-6 col-md-8 order-sm-1" style="text-align: center;">
+							{% if item.properties.quote != "" -%} 
+								<p class="text-h3">{{item.properties.quote}}</p>
+							{% endif -%}
+							<p class="text-h3">{{item.name}}</p>
+							<p class="text-h3">{{item.properties.role}} at {{item.properties.company}}</p>
+							</div>
+						</div> 
+				</div>
+			</div>
+    {% endfor -%}
+</div>

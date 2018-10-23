@@ -1,0 +1,36 @@
+query webapp(
+	$slug: String
+	$id: ID
+	$webApp: String
+	$limit: Int
+	$sort_type: String
+	$sort_order: String
+	$timestamp: String
+)
+{
+	data: customizations(
+		is_deleted: false
+		id: $id
+		name: $webApp
+		per_page: $limit
+		sort: [{ name: $sort_type, order: $sort_order }]
+		query:{
+			keyword: $slug,
+			fields:{
+				name: "properties.slug"
+			}
+		}
+		properties:[
+			{ name:"enabled", value:"true" }
+			{ name:"release_date", range: { lt: $timestamp } }
+			{ name:"expiry_date", range: { gt: $timestamp } }
+		]
+	),
+	{
+		total_entries
+		content: results{
+			id
+			properties
+		}
+	}
+}

@@ -1,0 +1,22 @@
+---
+name: menu
+custom_attributes:
+- name: name
+  attribute_type: string
+- name: link_name
+  attribute_type: string
+- name: link_url
+  attribute_type: string
+- name: link_target
+  attribute_type: string
+- name: link_parent
+  attribute_type: string
+- name: is_parent
+  attribute_type: boolean
+- name: add_class
+  attribute_type: string
+- name: order
+  attribute_type: string
+- name: menu_id
+  attribute_type: string
+---
