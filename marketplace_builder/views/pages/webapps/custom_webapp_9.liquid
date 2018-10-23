@@ -1,0 +1,17 @@
+---
+slug: testimonials
+layout_name: templates/1
+redirect_to: ''
+---
+{% include 'site/constants' -%}
+{% capture url_template %}/testimonials/{webapp_item}{% endcapture -%}
+{% assign url_params = current_full_path | extract_url_params: url_template %}
+{% assign _timestamp = "now" | date: "%s" %}
+{% query_graph 'webapp', result_name: 'webapp_item', slug: url_params.webapp_item, timestamp: _timestamp -%}
+{% assign item = webapp_item.data.content[0] -%}
+{% if item -%}
+{% capture webapp_detail -%}layouts/webapps/custom_webapp_9/detail/default{% endcapture -%}
+{% include webapp_detail -%}
+{% else -%}
+{% include 'site/404' -%}
+{% endif -%}
