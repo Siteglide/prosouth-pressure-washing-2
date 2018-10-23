@@ -1,4 +1,9 @@
-<link rel="stylesheet" href="{{ 'css/webapps/custom_webapp_8/list/default.css' | asset_url }}">
 {% for item in webappData.data.content -%}
-	<p>{{item.properties.name}}</p>
+	<li class="clearfix">
+    <div class="residential-img col-lg-3 col-md-4"><img src="{{item.properties.custom_field_1}}" alt="{{item.properties.name}}"></div>
+    <div class="residential-info col-lg-9 col-md-8">
+        <h2>{{item.properties.name}}</h2>
+        <p>{{item.properties.custom_field_2}}</p>
+    </div>
+</li>
 {% endfor -%}
