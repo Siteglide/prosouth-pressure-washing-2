@@ -1,0 +1,22 @@
+---
+name: custom_form_1
+custom_attributes:
+  - name: _is_form
+    attribute_type: string
+  - name: _form_name
+    attribute_type: string
+    metadata:
+      name: 'Request a Quote'
+  - name: name
+    attribute_type: string
+  - name: email
+    attribute_type: string
+  - name: custom_field_1
+    attribute_type: string
+  - name: custom_field_2
+    attribute_type: string
+  - name: custom_field_3
+    attribute_type: string
+  - name: custom_field_4
+    attribute_type: string
+---

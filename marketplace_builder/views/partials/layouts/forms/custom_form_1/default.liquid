@@ -1,0 +1,75 @@
+<div class="sectionPadding">
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      <div class="col-12 col-md-7">
+      <h2>Request a Quote</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-4">
+      <div class="col-12 col-md-7">
+        {% form -%}
+           <div class="row mt-4">
+  <div class="col">
+    <label for="name">Name</label>
+    <input class="form-control" name="{{ form_builder.fields.properties.name.name }}" value="{{ form_builder.fields.properties.name.value }}" id="name" type="text">
+    {% if form_builder.errors['properties.name'] %}
+      <p>{{ form_builder.errors['properties.name'] }}</p>
+    {% endif %}
+  </div>
+  </div>
+<div class="row mt-4">
+  <div class="col">
+    <label for="email">Email Address</label>
+    <input class="form-control" name="{{ form_builder.fields.properties.email.name }}" value="{{ form_builder.fields.properties.email.value }}" id="email" type="email">
+    {% if form_builder.errors['properties.email'] %}
+      <p>{{ form_builder.errors['properties.email'] }}</p>
+    {% endif %}
+  </div>
+  </div>
+<div class="row mt-4">
+  <div class="col">
+    <label for="custom_field_1">Home Phone Number</label>
+    <input class="form-control" name="{{ form_builder.fields.properties.custom_field_1.name }}" value="{{ form_builder.fields.properties.custom_field_1.value }}" id="custom_field_1" type="text">
+    {% if form_builder.errors['properties.custom_field_1'] %}
+      <p>{{ form_builder.errors['properties.custom_field_1'] }}</p>
+    {% endif %}
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col">
+    <label for="custom_field_2">Service Requested</label>
+    <input class="form-control" name="{{ form_builder.fields.properties.custom_field_2.name }}" value="{{ form_builder.fields.properties.custom_field_2.value }}" id="custom_field_2" type="text">
+    {% if form_builder.errors['properties.custom_field_2'] %}
+      <p>{{ form_builder.errors['properties.custom_field_2'] }}</p>
+    {% endif %}
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col">
+    <label for="custom_field_3">How did You Hear About Us</label>
+    <input class="form-control" name="{{ form_builder.fields.properties.custom_field_3.name }}" value="{{ form_builder.fields.properties.custom_field_3.value }}" id="custom_field_3" type="text">
+    {% if form_builder.errors['properties.custom_field_3'] %}
+      <p>{{ form_builder.errors['properties.custom_field_3'] }}</p>
+    {% endif %}
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col">
+    <label for="custom_field_4">Comments / Additional Information</label>
+    <textarea class="form-control" name="{{ form_builder.fields.properties.custom_field_4.name }}" rows="5" cols="30" value="{{ form_builder.fields.properties.custom_field_4.value }}" id="custom_field_4"></textarea>
+    {% if form_builder.errors['properties.custom_field_4'] %}
+      <p>{{ form_builder.errors['properties.custom_field_4'] }}</p>
+    {% endif%}
+  </div>
+</div>
+
+            <div class="row mt-4">
+          <div class="col">
+        <button class="btn buttonAccent">Submit</button>
+          </div>
+        </div>
+        {% endform -%}
+      </div>
+    </div>
+  </div>
+  </div>
