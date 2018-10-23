@@ -1,0 +1,30 @@
+---
+name: custom_webapp_7
+custom_attributes:
+  - name: _webapp_name
+    attribute_type: string
+    metadata:
+      name: 'Residential Before and After'
+  - name: _webapp_slug
+    attribute_type: string
+    metadata:
+      name: 'residential-before-and-after'
+  - name: name
+    attribute_type: string
+  - name: slug
+    attribute_type: string
+  - name: weighting
+    attribute_type: integer
+  - name: release_date
+    attribute_type: integer
+  - name: expiry_date
+    attribute_type: integer
+  - name: enabled
+    attribute_type: boolean
+  - name: custom_field_1
+    attribute_type: string
+  - name: custom_field_2
+    attribute_type: string
+  - name: custom_field_3
+    attribute_type: string
+---
