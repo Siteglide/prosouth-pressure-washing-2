@@ -1,21 +1,4 @@
+<link rel="stylesheet" href="{{ 'css/webapps/custom_webapp_7/list/default.css' | asset_url }}">
 {% for item in webappData.data.content -%}
-  <div class="item clearfix {% if {{this.counter}} == 1 -%}active{%endif-%}">
-    <div class="before-block col-xs-6 text-right skewx">
-        <div class="skewxin">
-            <div class="btn-desc">BEFORE</div>
-            <img src="{{item.properties.custom_field_1}}?Action=thumbnail&Width=435&Height=336&algorithm=fill_proportional" alt="{{item.properties.name}} Before">
-        </div>
-    </div>
-    <div class="after-block col-xs-6 skewx">
-        <div class="skewxin">
-            <div class="btn-desc">AFTER</div>
-            <img src="{{item.properties.custom_field_2}}?Action=thumbnail&Width=435&Height=336&algorithm=fill_proportional" alt="{{item.properties.name}} After">
-        </div>
-    </div>
-    {% if this.custom_field_3 != '' -%} 
-    <div class="b-and-a-description text-center clearfix">
-        <h2>{{item.properties.custom_field_3}}</h2>
-    </div>
-    {% endif -%}
-</div>
+	<p>{{item.properties.name}}</p>
 {% endfor -%}
