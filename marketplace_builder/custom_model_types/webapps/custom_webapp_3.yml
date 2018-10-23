@@ -1,0 +1,28 @@
+---
+name: custom_webapp_3
+custom_attributes:
+  - name: _webapp_name
+    attribute_type: string
+    metadata:
+      name: 'Commercial Services'
+  - name: _webapp_slug
+    attribute_type: string
+    metadata:
+      name: 'commercial-services'
+  - name: name
+    attribute_type: string
+  - name: slug
+    attribute_type: string
+  - name: weighting
+    attribute_type: integer
+  - name: release_date
+    attribute_type: integer
+  - name: expiry_date
+    attribute_type: integer
+  - name: enabled
+    attribute_type: boolean
+  - name: custom_field_1
+    attribute_type: string
+  - name: custom_field_2
+    attribute_type: string
+---
