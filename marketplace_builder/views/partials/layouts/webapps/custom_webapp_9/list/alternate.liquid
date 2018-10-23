@@ -1,0 +1,8 @@
+
+
+{% for item in webappData.data.content -%}
+<div class="testimonial-wrap">
+    <p>{{item.properties.custom_field_1}}</p>
+</div>
+<p class="testi-name">{{item.properties.name}}</p>
+{% endfor -%}
