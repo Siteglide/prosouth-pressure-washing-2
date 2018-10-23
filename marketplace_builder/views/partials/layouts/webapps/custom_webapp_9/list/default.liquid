@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="{{ 'css/webapps/custom_webapp_9/list/default.css' | asset_url }}">
 {% for item in webappData.data.content -%}
-	<p>{{item.properties.name}}</p>
+  <li>
+    <p>{{item.properties.custom_field_1}}</p>
+    <p class="testi-name">{{item.properties.name}}</p>
+  </li>
 {% endfor -%}
