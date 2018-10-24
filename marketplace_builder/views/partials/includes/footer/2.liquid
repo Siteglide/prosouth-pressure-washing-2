@@ -1,21 +1,23 @@
 {%- capture 'siteglideMeta' -%}Footer.inc||2{%- endcapture -%}
 <div class="footer">
     <div class="container">
-        <div class="footer-logo">{module_contentholder name="FOOTER - Logo"}</div>
-        {module_contentholder name="FOOTER - Info"}
+        <div class="footer-logo">{%- include 'content_section', item: '18', name: 'FOOTER - Logo' -%}</div>
+        {%- include 'content_section', item: '17', name: 'FOOTER - Info' -%}
         <div class="social-links social-links-wrap list-inline">
             <div class="row">
-                {module_contentholder name="FOOTER - Social Media"}
+              {%- include 'content_section', item: '19', name: 'FOOTER - Social Media' -%}            
             </div>
         </div>
     </div>
 </div>
 
-{module_contentholder name="SECTION - Certification Logos"}
+
+{%- include 'content_section', item: '25', name: 'SECTION - Certification Logos' -%}
 
 <div class="footer">
     <div class="container">
-        {module_contentholder name="FOOTER - Copyright"}
-        {module_contentholder name="FOOTER - Splash"}
+        
+{%- include 'content_section', item: '16', name: 'FOOTER - Copyright' -%}
+{%- include 'content_section', item: '20', name: 'FOOTER - Splash' -%}
     </div>
 </div>
