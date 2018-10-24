@@ -1,10 +1,10 @@
 {%- capture 'siteglideMeta' -%}Header.inc||3{%- endcapture -%}
 <section class="mainHeader">
     <div class="container">
-        {module_contentholder name="HEADER - Logo"}
+      {%- include 'content_section', item: '21', name: 'HEADER - Logo' -%}
         <div class="topheader">
-            {module_contentholder name="HEADER - Phone"}
+            {%- include 'content_section', item: '23', name: 'HEADER - Phone' -%}
         </div>
-        {module_contentholder name="HEADER - Main Menu"}
+        {%- include 'content_section', item: '22', name: 'HEADER - Main Menu' -%}
     </div><!-- /.container -->
 </section><!-- /.mainHeader -->
