@@ -1,0 +1,37 @@
+{%- capture 'siteglideMeta' -%}HOME Template||7{%- endcapture -%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "/_System/Includes/Head.inc" -%}
+    <link rel="shortcut icon" href="/images/favicon-prosouth.ico" type="image/x-icon" />
+</head>
+
+<body class="homepage">
+  <div id="page">
+
+    {% include "/_System/Includes/Header.inc" -%}
+
+    {module_contentholder name="BANNER - Home"}
+    {module_contentholder name="SECTION - Page Shortcut"}
+
+    <section class="content gray-bg-content">
+      <div class="container">
+        {module_contentholder name="ASIDE - Give us a call"}
+        <div class="hp-content">
+          {tag_pagecontent}
+        </div>
+        
+      </div>
+    </section>
+
+    {module_contentholder name="SECTION - Featured Testimonial"}
+  
+    {% include "/_System/Includes/Footer.inc" -%}
+
+  </div><!-- /.page -->
+
+    {% include "/_System/Includes/Scripts.inc" -%}
+</body>
+
+</html>
