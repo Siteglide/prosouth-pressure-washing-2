@@ -3,35 +3,31 @@
 <html lang="en">
 
 <head>
-  {% include "/_System/Includes/Head.inc" -%}
-    <link rel="shortcut icon" href="/images/favicon-prosouth.ico" type="image/x-icon" />
+  {%- include 'header', item: '2', name: 'Head.inc' -%}
+    <link rel="shortcut icon" href="{{ '/images/favicon-prosouth.ico' | asset_url }}" type="image/x-icon" />
 </head>
 
 <body class="homepage">
   <div id="page">
+    {%- include 'header', item: '3', name: 'Header.inc' -%}
 
-    {% include "/_System/Includes/Header.inc" -%}
-
-    {module_contentholder name="BANNER - Child"}
+    {%- include 'content_section', item: '14', name: 'BANNER - Child' -%}
 
     <section class="content mainContent clearfix">
       <div class="container">
-        {module_contentholder name="SECTION - Breadcrumbs"}
-        {tag_pagecontent}
+        {%- include 'content_section', item: '24', name: 'SECTION - Breadcrumbs' -%}
+        {{ content_for_layout }}
        </div>
     </section>
-
-    {module_contentholder name="SECTION - Commercial Pressure Washing"}
-
-    {module_contentholder name="SECTION - Commercial Before and After"}
-      
-    {module_contentholder name="SECTION - Featured Testimonial"}
+    {%- include 'content_section', item: '27', name: 'SECTION - Commercial Pressure Washing' -%}
   
-    {% include "/_System/Includes/Footer.inc" -%}
+    {%- include 'content_section', item: '26', name: 'SECTION - Commercial Before and After' -%}
 
+    {%- include 'content_section', item: '28', name: 'SECTION - Featured Testimonial' -%}
+
+    {%- include 'footer', item: '2', name: 'Footer.inc' -%}
   </div><!-- /.page -->
-
-    {% include "/_System/Includes/Scripts.inc" -%}
+  {%- include 'code_snippet', item: '3', name: 'Scripts.inc' -%}
 </body>
 
 </html>
