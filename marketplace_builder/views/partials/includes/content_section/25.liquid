@@ -2,7 +2,7 @@
 <div class="footer-logo-list">
     <div class="container">
         <ul>
-            {module_webapps id="27111" filter="all"}
+          {%- include 'webapp', type: 'custom_webapp_1', layout: 'default', limit: 100, sort_type: 'name.raw', sort_order: 'asc' -%}
         </ul>
     </div>
 </div>
