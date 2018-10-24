@@ -1,0 +1,37 @@
+{%- capture 'siteglideMeta' -%}CHILD Commercial Template||2{%- endcapture -%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "/_System/Includes/Head.inc" -%}
+    <link rel="shortcut icon" href="/images/favicon-prosouth.ico" type="image/x-icon" />
+</head>
+
+<body class="homepage">
+  <div id="page">
+
+    {% include "/_System/Includes/Header.inc" -%}
+
+    {module_contentholder name="BANNER - Child"}
+
+    <section class="content mainContent clearfix">
+      <div class="container">
+        {module_contentholder name="SECTION - Breadcrumbs"}
+        {tag_pagecontent}
+       </div>
+    </section>
+
+    {module_contentholder name="SECTION - Commercial Pressure Washing"}
+
+    {module_contentholder name="SECTION - Commercial Before and After"}
+      
+    {module_contentholder name="SECTION - Featured Testimonial"}
+  
+    {% include "/_System/Includes/Footer.inc" -%}
+
+  </div><!-- /.page -->
+
+    {% include "/_System/Includes/Scripts.inc" -%}
+</body>
+
+</html>
