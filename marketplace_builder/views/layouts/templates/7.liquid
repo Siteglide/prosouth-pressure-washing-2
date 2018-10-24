@@ -3,35 +3,30 @@
 <html lang="en">
 
 <head>
-  {% include "/_System/Includes/Head.inc" -%}
-    <link rel="shortcut icon" href="/images/favicon-prosouth.ico" type="image/x-icon" />
+  {%- include 'header', item: '2', name: 'Head.inc' -%}
+    <link rel="shortcut icon" href="{{ '/images/favicon-prosouth.ico' | asset_url }}" type="image/x-icon" />
 </head>
 
 <body class="homepage">
   <div id="page">
+    {%- include 'header', item: '3', name: 'Header.inc' -%}
 
-    {% include "/_System/Includes/Header.inc" -%}
+    {%- include 'content_section', item: '15', name: 'BANNER - Home' -%}
+    {%- include 'content_section', item: '30', name: 'SECTION - Page Shortcut' -%}
 
-    {module_contentholder name="BANNER - Home"}
-    {module_contentholder name="SECTION - Page Shortcut"}
 
     <section class="content gray-bg-content">
       <div class="container">
-        {module_contentholder name="ASIDE - Give us a call"}
+        {%- include 'content_section', item: '13', name: 'ASIDE - Give us a call' -%}
         <div class="hp-content">
-          {tag_pagecontent}
+          {{ content_for_layout }}
         </div>
-        
       </div>
     </section>
-
-    {module_contentholder name="SECTION - Featured Testimonial"}
-  
-    {% include "/_System/Includes/Footer.inc" -%}
-
+  {%- include 'content_section', item: '28', name: 'SECTION - Featured Testimonial' -%}
+  {%- include 'footer', item: '2', name: 'Footer.inc' -%}
   </div><!-- /.page -->
-
-    {% include "/_System/Includes/Scripts.inc" -%}
+{%- include 'code_snippet', item: '3', name: 'Scripts.inc' -%}
 </body>
 
 </html>
