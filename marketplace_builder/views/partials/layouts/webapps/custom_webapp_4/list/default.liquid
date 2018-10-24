@@ -1,5 +1,5 @@
 {% for item in webappData.data.content -%}
 	<div class="img-cont">
-    <img src="{{ 'item.properties.custom_field_1' | asset_url }}" alt="{{item.properties.name}}">
+    <img src="{{ '/item.properties.custom_field_1' | asset_url }}" alt="{{item.properties.name}}">
 </div>
 {% endfor -%}
