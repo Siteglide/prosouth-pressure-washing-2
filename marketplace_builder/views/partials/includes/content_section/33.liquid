@@ -3,7 +3,7 @@
     <div class="container">
         <div class="residential-list list-inline clearfix">
             <ul>
-                {module_webapps id="27112" filter="all" sortType="weightreverse"}
+              {%- include 'webapp', type: 'custom_webapp_8', sort_order: 'desc', sort_type: 'properties.weighting', layout: 'default', limit: '100' -%}           
             </ul>
         </div>
     </div>
